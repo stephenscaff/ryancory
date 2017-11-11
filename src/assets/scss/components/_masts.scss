@@ -1,0 +1,68 @@
+//----------------------------------------------
+//  Button Theme
+//  Default Button
+//----------------------------------------------
+.mast{
+  position: relative;
+  display:flex;
+  align-items:center;
+  width: 100%;
+  height: 100vh;
+  margin: 0 auto;
+
+  @media (min-width: $mq-med){
+    display: flex;
+    align-items: center;
+  }
+
+  &.-img {
+    height:30em;
+    max-width: 95%;
+  }
+  &.-has-vid {
+    place-content:center;
+    text-align: center;
+    color: $color-white;
+    @include bg-overlay();
+
+    a {
+      color: $color-white;
+    }
+  }
+
+  &__bg {
+    @include bg-img-abs();
+    animation: fade-in 1s 0.5s ease both;
+
+    .mast.-img & {
+      //background-size: 100%;
+      //background-position: top;
+    }
+  }
+
+  &__content {
+    z-index: $z-content;
+    position: relative;
+  }
+
+  &__headline {
+    margin: 0 0 $mb/2;
+    @extend %no-breaks-med;
+    @media (min-width: $mq-med) {
+      max-width: 60%
+    }
+  }
+
+  &__title {
+    color: currentColor;
+
+    .-has-vid & {
+      margin: 0.5em auto 0.75em;
+    }
+  }
+
+
+  &__title,  &__subtitle{
+    //@include font-rwd($font-xl, $font-xxl );
+  }
+}

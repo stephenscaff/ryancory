@@ -1,0 +1,46 @@
+//----------------------------------------------
+//  Photos Grid
+//  @requires (mixin) col-grid - a multi column grid mixin
+//  @see      scss/tools/_grids.scss
+//-----------------------------------------------
+
+.photos{
+  padding: 0 0 $pad-xl;
+
+  @media (min-width: $mq-med){
+    padding: $pad-sm 0 $pad-xl;
+  }
+
+  &__grid{
+    @media (min-width: $mq-med){
+      @include col-grid(1,2, $gap: 1.5em, $pad: 1.5em);
+    }
+  }
+}
+
+//----------------------------------------------
+//  Work CTAs
+//  Single work feed elements
+//-----------------------------------------------
+.photo{
+
+  &__link{
+    display: block;
+  }
+
+  &__title{
+    font-size: $font-med;
+  }
+
+  &__figure{
+    margin-bottom: 1em;
+  }
+
+  &__icon{
+    color: $color-alpha;
+
+    .photo:hover &{
+      //color: $color-alpha;
+    }
+  }
+}

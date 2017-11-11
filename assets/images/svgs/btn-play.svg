@@ -1,0 +1,1 @@
+<button class="btn-play" type="button" name="button"><span class="btn-play__circle"/><svg viewBox="0 0 15 25" class="btn-play__triangle"><path d="M1.5 1.5l12.3 11-12.3 11z"/></svg><svg viewBox="0 0 61 61" class="btn-play__circle-inner"><circle cx="30.5" cy="30.5" r="28.5"/></svg></button>

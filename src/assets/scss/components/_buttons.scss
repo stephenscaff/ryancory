@@ -1,0 +1,79 @@
+//----------------------------------------------
+//  Button Theme
+//  Default Button
+//----------------------------------------------
+%btn-theme{
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  width: auto;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  @extend %font-links;
+  font-weight: 400;
+  text-align: center;
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+
+
+//----------------------------------------------
+//  Basic Button
+//----------------------------------------------
+.btn{
+  @extend %btn-theme;
+  padding: 0.25em 0;
+  color: $color-grey-dark;
+  overflow-x: hidden;
+  transition: color 0.5s $ease-cb-2;
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width:100%;
+    height: 2px;
+    background-color: $color-alpha;
+    transition: all .8s cubic-bezier(.555,.205,.295,.975);
+  }
+
+    &:hover:after, a:hover .btn:after {
+      animation: link-hover .8s cubic-bezier(.58,.3,.005,1) 0s 2;
+    }
+
+
+  &:hover{
+    color: $color-grey-dark;
+    transition: color 0.5s $ease-cb-2;
+  }
+}
+
+.btn.-white {
+  color: #fff;
+}
+
+
+@keyframes link-hover {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0)
+    }
+
+    50% {
+        -webkit-transform: translateX(100%);
+        transform: translateX(100%)
+    }
+
+    50.01% {
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%)
+    }
+
+    to {
+        -webkit-transform: translateX(0);
+        transform: translateX(0)
+    }
+}

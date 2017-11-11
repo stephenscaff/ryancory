@@ -1,0 +1,38 @@
+//--------------------------------------------
+// Site Header
+//--------------------------------------------
+.site-header{
+  z-index: $z-header;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  height: $site-header-height;
+  width: 100%;
+
+  &__grid {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 95%;
+    height: 100%;
+    margin: 0 auto;
+  }
+  &__logo{
+    position: absolute;
+    left: 0;
+    right: 0;
+    display: flex;
+    place-content: center;
+    margin: 0 auto;
+    text-align: center;
+
+
+    svg {
+      height: 2.5em;
+    }
+  }
+}
+
+.has-header-offset {
+  margin-top: $site-header-height;
+}

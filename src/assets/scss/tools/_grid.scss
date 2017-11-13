@@ -132,9 +132,12 @@
 //  @param $wrap - wrap / no-wrap
 //  @mobile $mobile (boolean) - start row on mobile
 //----------------------------------------------
-@mixin flex-row($align: null, $justify:null, $wrap: wrap, $col-pad:null, $mobile:false){
-  @if $align {
-    align-items: $align;
+@mixin flex-row($v-align: null, $h-align: null, $justify:null, $wrap: wrap, $col-pad:null, $mobile:false){
+  @if $v-align {
+    align-items: $v-align;
+  }
+  @if $h-align {
+    place-content: $h-align;
   }
   @if $justify{
     justify-content: $justify;

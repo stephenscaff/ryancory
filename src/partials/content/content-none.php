@@ -12,9 +12,9 @@ exit; // Exit if accessed directly
 }
 ?>
 
-<section class="nunzo"> 
+<section class="nunzo text-center">
   <div class="grid">
-    <div class="nunzo__content">
+    <div class="nunzo__content text-center">
       <?php if (is_search()) : ?>
         <h4>Sorry.</h4>
         <p>Your search returned no results</p>

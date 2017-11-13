@@ -27,10 +27,10 @@ body {
     font-size: 120%;
   }
   @media (min-width: $mq-xl) {
-    font-size: 125%;
+    font-size: 130%;
   }
   @media (min-width: $mq-xxl) {
-    font-size: 130%;
+    font-size: 137%;
   }
   @media (min-width: $mq-xxxl) {
     font-size: 155%;
@@ -60,7 +60,7 @@ body {
 //  h3 and h4
 //----------------------------------------------
 %font-h3, h3, %font-h4, h4 {
-  margin-bottom: $mb/2;
+  margin-bottom: $pad-xs;
   line-height: 1.25;
   @include font-rwd($font-med, $font-med + $font-scale)
 }
@@ -69,7 +69,7 @@ body {
 //  h5
 //----------------------------------------------
 %font-h5, h5{
-  margin-bottom: $mb/2;
+  margin-bottom: $pad-xs;
   line-height: 1.25;
   @include font-rwd($font-base, $font-base + $font-scale)
 }
@@ -84,7 +84,7 @@ h1,h2,h3,h4,h5{
 //----------------------------------------------
 p {
   margin-top: 0;
-  margin-bottom: .75em;
+  margin-bottom: $pad-xs;
   @media (min-width: $mq-xxl){
     //font-size: $font-sma;
   }

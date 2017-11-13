@@ -23,7 +23,13 @@
     //@include as_ratio_pseudo(1025, 567);
 
     .-full & {
-      height: 30em;
+      height: 25em;
+      @media (min-width: $mq-med) {
+        height: 32em;
+      }
+      @media (min-width: $mq-xl) {
+        height: 35em;
+      }
     }
   }
 

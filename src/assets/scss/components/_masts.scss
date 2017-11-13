@@ -16,7 +16,8 @@
   }
 
   &.-img {
-    height:30em;
+    //height:30em;
+    height: auto;
     max-width: 95%;
   }
   &.-has-vid {
@@ -37,6 +38,7 @@
     .mast.-img & {
       //background-size: 100%;
       //background-position: top;
+      @include bg-img-ratio(2000,1000);
     }
   }
 
@@ -46,7 +48,7 @@
   }
 
   &__headline {
-    margin: 0 0 $mb/2;
+    margin: 0 0 $pad-xs/2;
     @extend %no-breaks-med;
     @media (min-width: $mq-med) {
       max-width: 60%

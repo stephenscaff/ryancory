@@ -12,29 +12,14 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 get_header(); ?>
 
 <!-- MAIN -->
-<main role="main" class="">
+<main role="main" class="has-header-offset">
 
-<section class="heading">
+<section class="heading pad">
   <h1 class="heading__title">Say Cheese</h1>
   <p class="heading__text">
     Let’s shoot some photos together.
   </p>
 </section>
-
-<?php
-/**
- * Partial Filters
- *
- * The Partial for Post Footers, used on blogposts and the mondalite post type.
- *
- * @author    Stephen Scaff
- * @package   Partials
- * @version   1.0
- */
-
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
-//jumpoff_categories_list();
-?>
 
 <!-- Filters -->
 <div class="sticky-wrap">
@@ -46,23 +31,22 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 </div>
 
 
-
-<!-- Photos -->
+<?php
+if ( have_posts() ) : ?>
 <section class="photos">
   <div class="grid">
     <div class="photos__grid">
-      <?php
-      $counter = 1;
-      if ( have_posts() ): while ( have_posts() ) : the_post();
-       include(locate_template('partials/content/content-photo.php'));
-       $counter++;
-      endwhile; else:
-        get_template_part( 'partials/content/content', 'none' );
-      endif;
-    ?>
+      <?php   while ( have_posts() ) : the_post(); ?>
+      <?php get_template_part( 'partials/content/content', 'photo' ); ?>
+    <?php endwhile; ?>
     </div>
   </div>
 </section>
+<?php
+else :
+  get_template_part( 'partials/content/content', 'none' );
+endif;
+?>
 
 <!-- Pagination -->
 <?php get_template_part( 'partials/posts', 'load-more' );?>

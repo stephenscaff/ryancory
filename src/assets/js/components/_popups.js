@@ -118,6 +118,6 @@ var PopUps = (function() {
   };
  })();
 
-window.onload = function() {
+window.addEventListener('load', function() {
   PopUps.init();
-};
+});

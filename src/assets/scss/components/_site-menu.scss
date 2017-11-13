@@ -27,7 +27,7 @@
   &__nav a {
     display: block;
     padding: 0.25em 0;
-    @include link-styles($color-grey, $color-grey-dark);
+    @include links($color-grey, $color-grey-dark);
     overflow: hidden;
     @extend %slice-text-menu;
   }

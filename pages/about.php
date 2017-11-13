@@ -10,6 +10,8 @@
 get_header();
 
 $content = get_the_content();
+$email = get_field('email', 'option');
+$phone = get_field('phone', 'option');
 $vimeo = get_field('vimeo', 'option');
 $youtube = get_field('youtube', 'option');
 $instagram = get_field('instagram', 'option');
@@ -36,7 +38,13 @@ $ft_img = jumpoff_ft_img('full');
   <figure class="mast__bg"></figure>
 </section>
 
-<section class="content pad-lg">
+
+<section class="heading pad-t">
+  <a class="heading__title" href="mailto:<?php echo $email; ?>"><?php echo $email; ?>
+  <a class="heading__link" href="tel: <?php echo $phone; ?>"><?php echo $phone; ?></a>
+</section>
+
+<section class="content pad">
   <div class="grid-sm">
     <?php
     while (have_posts()) : the_post();

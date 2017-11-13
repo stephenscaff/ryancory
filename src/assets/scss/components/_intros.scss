@@ -31,7 +31,7 @@
       }
 
       p {
-        margin: $mb 0;
+        margin: $pad-xs 0;
         font-size: $font-sm;
       }
     }
@@ -43,6 +43,6 @@
   }
 
   &__btn {
-    margin-top: $mb;
+    margin-top: $pad-xs;
   }
 }

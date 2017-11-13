@@ -4,6 +4,24 @@
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 /**
+ * Term Class
+ * Returns a given term as a BEVM
+ * chainable modifier class
+ */
+function jumpoff_term_class($taxonomy) {
+  global $post;
+  $terms = wp_get_post_terms($post->ID, $taxonomy);
+  if ($terms) {
+    foreach ( $terms as $term ) {
+      $str .= '-' . strtolower($term->name) . ' ';
+      return $str;
+    }
+  }
+}
+
+
+
+/**
  *  Categories List
  *  Returns cats wtih content to output as list
  *
@@ -93,10 +111,13 @@ function jumpoff_filter_items($taxonomy, $filtering=False) {
         $class = $current_term->slug == $term->slug ? 'is-active' : '' ;
       }
 
-      if ( $filtering == True  )  {
+      if ( $type == 'list-filter'  )  {
         $filter_items .= '<li class="filter ' . $class . '" data-filter=".'.$term->slug . '">' . $term->name . '</li>';
-      } else {
-        $filter_items .= '<li><a class="tag ' . $class . '" href="' . esc_url( $term_link) . '">' . $term->name . '</a></li>';
+      } elseif ($type == 'list') {
+        $filter_items .= '<li><a class="' . $class . '" href="' . esc_url( $term_link) . '">' . $term->name . '</a></li>';
+      }
+      else {
+        $filter_items .= '<a class="' . $class . '" href="' . esc_url( $term_link) . '">' . $term->name . '</a>';
       }
     }
     return $filter_items;

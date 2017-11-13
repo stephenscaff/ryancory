@@ -15,6 +15,10 @@
     @media (min-width: $mq-med){
       @include col-grid(1,2, $gap: 1.5em, $pad: 1.5em);
     }
+
+    & > * {
+      margin-bottom: $pad;
+    }
   }
 }
 
@@ -33,7 +37,31 @@
   }
 
   &__figure{
-    margin-bottom: 1em;
+    margin-bottom: $pad-sm/2;
+    transform: scale(1);
+    transition: transform .3s ease-in-out;
+    overflow: hidden;
+
+    .photo__link:hover &, a:hover &{
+      transform: scale(.97);
+    }
+  }
+
+  &__scaler {
+    display: block;
+    transform: scale(1);
+    border-radius: $base-border-radius;
+    transition: transform .3s ease-in-out;
+
+    .photo__link:hover &, a:hover &{
+      transform: scale(1.1);
+      transition: transform .3s ease-in-out;
+    }
+  }
+
+  &__img {
+    display: block;
+    border-radius: $base-border-radius;
   }
 
   &__icon{
@@ -43,4 +71,15 @@
       //color: $color-alpha;
     }
   }
+}
+
+.photo:not(.-polaroid) .photo__scaler {
+  border-radius: $base-border-radius;
+}
+
+.photo.-polaroid .photo__bg {
+  padding: 1.5em 1.5em 4em;
+  margin-bottom: $pad-sm/2;
+  background: #f9f9f9;
+  box-shadow: 1px 2px 6px -1px rgba(0,0,0,0.2);
 }

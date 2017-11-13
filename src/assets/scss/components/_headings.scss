@@ -1,0 +1,18 @@
+.heading {
+  text-align: center;
+  &__title {
+    display: block;
+    font-size: $font-lg;
+    color: $color-grey-dark;
+  }
+
+  &__link {
+    @extend .btn;
+    font-size: $font-base;
+    font-style: normal;
+  }
+}
+
+.heading + .content {
+    padding-top: $pad-sm;
+}

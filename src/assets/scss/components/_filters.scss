@@ -1,0 +1,23 @@
+.filters {
+  padding: $pad-sm 0;
+
+  &__nav {
+    @include flex-row(
+    $v-align:center,
+    $h-align:center,
+    $mobile:true
+    )
+  }
+
+  &__nav a {
+    margin: 0 1em;
+    @include links($color-grey, $color-alpha);
+    font-style: italic;
+  }
+}
+
+
+.heading + .sticky-wrap > .filters,
+.heading + .filters {
+  padding-top: 0;
+}

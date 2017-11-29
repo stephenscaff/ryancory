@@ -17,13 +17,11 @@ $tax = jumpoff_term_class('photo_cat');
 ?>
 <article class="photo <?php echo $tax ?>">
   <a class="photo__link" href="<?php echo $link; ?>">
-    <div class="photo__bg">
       <figure class="photo__figure">
         <span class="photo__scaler">
           <img class="photo__img" src="<?php echo $img; ?>">
         </span>
       </figure>
-    </div>
     <header class="photo__header">
       <h3 class="photo__title">
         <?php echo $title; ?>

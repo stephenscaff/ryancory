@@ -54,7 +54,7 @@ if (!class_exists('BlockquoteShortcode')) {
       'class'        => '',
       'cite'       => '',
       ), $atts));
-  
+
       // Vars
 
       if ($class) {
@@ -62,14 +62,14 @@ if (!class_exists('BlockquoteShortcode')) {
       }
       // Cite
       if($cite){
-        $cite = '<cite>' . $atts['cite'] . '</cite>'; 
-      } 
+        $cite = '<cite>' . $atts['cite'] . '</cite>';
+      }
 
       // Outputs
       $output = '<blockquote class="'. $class .'">' . $content . $cite . '</blockquote>';
       //$output = str_replace(array('<br />', '<br/>', '<br>', '<br>'), array('', '', '', ''), $output);
       $output = str_replace('<br>', '', $output);
-      $output = wpautop($output);
+      $output = jumpoff_unautop($output);
       return $output;
     }
   }

@@ -19,7 +19,20 @@ function jumpoff_term_class($taxonomy) {
   }
 }
 
+/**
+ *  Get Categorey Slug
+ *  @return $categories (post_name);
+ */
+function jumpoff_get_cat_slug(){
 
+  global $post;
+
+  $cats = get_the_category($post->ID);
+
+  if ($cats) {
+    return $cats[0]->slug;
+  }
+}
 
 /**
  *  Categories List
@@ -85,7 +98,7 @@ function jumpoff_term_list($taxonomy, $type) {
  *  @see    kit/assets/js/vendor/_mixitup.js
  *  @return string $filter_item
  */
-function jumpoff_filter_items($taxonomy, $filtering=False) {
+function jumpoff_filter_items($taxonomy, $type) {
 
   global $post;
   $terms = get_terms($taxonomy);
@@ -111,12 +124,13 @@ function jumpoff_filter_items($taxonomy, $filtering=False) {
         $class = $current_term->slug == $term->slug ? 'is-active' : '' ;
       }
 
-      if ( $type == 'list-filter'  )  {
-        $filter_items .= '<li class="filter ' . $class . '" data-filter=".'.$term->slug . '">' . $term->name . '</li>';
-      } elseif ($type == 'list') {
+      if ( $type == 'span'  )  {
+        $filter_items .= '<span class="filter ' . $class . '" data-filter="' . $term->slug . '">' . $term->name . '</span>';
+      }
+      elseif ($type == 'list') {
         $filter_items .= '<li><a class="' . $class . '" href="' . esc_url( $term_link) . '">' . $term->name . '</a></li>';
       }
-      else {
+      elseif ($type = 'link') {
         $filter_items .= '<a class="' . $class . '" href="' . esc_url( $term_link) . '">' . $term->name . '</a>';
       }
     }

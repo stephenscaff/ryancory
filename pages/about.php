@@ -17,29 +17,16 @@ $youtube = get_field('youtube', 'option');
 $instagram = get_field('instagram', 'option');
 $twitter = get_field('twitter', 'option');
 $facebook = get_field('facebook', 'option');
-
-$ft_img_med = jumpoff_ft_img('medium');
-$ft_img = jumpoff_ft_img('full');
+//
+// $ft_img_med = jumpoff_ft_img('medium');
+// $ft_img = jumpoff_ft_img('full');
 ?>
 
-<style>
-  .mast__bg {
-    background-image: url(<?php echo $ft_img_med; ?>);
-  }
-  @media (min-width: 32em) {
-    .mast__bg {
-      background-image: url(<?php echo $ft_img; ?>);
-    }
-  }
-</style>
 <main role="main" class="has-header-offset">
 
-<section class="mast -img">
-  <figure class="mast__bg"></figure>
-</section>
+<?php get_template_part( 'partials/partial', 'image-mast' );?>
 
-
-<section class="heading pad-t">
+<section class="heading pad-t -about">
   <a class="heading__title" href="mailto:<?php echo $email; ?>"><?php echo $email; ?>
   <a class="heading__link" href="tel: <?php echo $phone; ?>"><?php echo $phone; ?></a>
 </section>

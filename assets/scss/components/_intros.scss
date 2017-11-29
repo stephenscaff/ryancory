@@ -1,0 +1,48 @@
+//--------------------------------------------
+// Intros
+//--------------------------------------------
+.intro{
+  padding: $pad 0;
+
+  & + & {
+    padding-top: $pad-xs;
+    padding-bottom: $pad-xs;
+  }
+  &__grid{
+    @include flex-row($col-pad:2em);
+    justify-content: center;
+
+    .-has-vid & {
+      align-items: center;
+    }
+  }
+
+  &__grid.-link-wrap{
+    color: $color-grey;
+    cursor: pointer;
+  }
+
+  &__header{
+    @include flex-col(40%);
+
+    .-has-vid & {
+      @media (min-width: $mq-med) {
+        padding-left: 100% - $grid-max-width-xl;
+      }
+
+      p {
+        margin: $pad-xs 0;
+        font-size: $font-sm;
+      }
+    }
+  }
+
+
+  &__main{
+    @include flex-col(60%);
+  }
+
+  &__btn {
+    margin-top: $pad-xs;
+  }
+}

@@ -15,7 +15,6 @@
     "gulp-jshint": "^2.0.4",
     "gulp-newer": "^1.3.0",
     "gulp-sass": "^3.1.0",
-    "gulp-uglify": "^3.0.0",
     "jshint": "^2.9.5",
     "postcss-assets": "^4.2.0"
   },
@@ -24,6 +23,7 @@
     "gulp-notify": "^3.0.0",
     "gulp-plumber": "^1.1.0",
     "gulp-sourcemaps": "^2.6.0",
-    "gulp-svgo": "^1.2.5"
+    "gulp-svgo": "^1.2.5",
+    "gulp-uglifyes": "^0.1.2"
   }
 }

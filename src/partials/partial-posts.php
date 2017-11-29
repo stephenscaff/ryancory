@@ -14,11 +14,11 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 ?>
 
 <section class="posts">
- <div class="grid">
+ <div id="js-posts" class="grid-xl">
   <?php
     if ( have_posts() ): while ( have_posts() ) : the_post();
-      get_template_part( 'partials/content/content', 'posts' );
-    endwhile; else: 
+      get_template_part( 'partials/content/content', 'post' );
+    endwhile; else:
       get_template_part( 'partials/content/content', 'none' );
     endif;
     ?>

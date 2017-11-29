@@ -41,7 +41,7 @@ function create_film_post_type() {
   'menu_dashicon'         => 'dashicons-video-alt3',
   'menu_icon'             => 'dashicons-video-alt3',
   'query_var'             => true,
-  'supports'              => array( 'title','thumbnail', 'editor' ),
+  'supports'              => array( 'title','thumbnail', 'excerpt' ),
   'capability_type'       => 'post',
   'can_export'            => true,
   'has_archive'           => true,

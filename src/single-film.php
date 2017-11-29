@@ -9,29 +9,33 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-get_header(); 
+get_header();
 
+$title = get_the_title();
+$film_title = get_field('film_title');
+$subtitle = get_field('subtitle');
 ?>
 
 <!-- MAIN-->
-<main role="main">
+<main role="main" class="has-header-offset">
 
 <?php while (have_posts()) : the_post(); ?>
 
-<article>
+<article class="film-single -has-modules">
 
-<!-- Post Header -->
-<?php //get_template_part( 'partials/partial', 'post-header' );?>
-
-<!--Post Content -->
-<section class="post-content content">
-  <div class="grid-sm">
-      <?php the_content(); ?>
+<section class="mast-film">
+  <div class="grid">
+    <h1 class="mast-film__pretitle oh">><span><?php echo $title; ?></span></h1>
+    <h2 class="mast-film__title oh"><span><?php echo $film_title; ?></span></h2>
+    <?php if ($subtitle) : ?>
+      <p class="mast-film__text">
+      <?php echo $subtitle; ?>
+      </p>
+    <?php endif; ?>
   </div>
 </section>
 
-<!-- Footer -->
-<?php //get_template_part( 'partials/partial', 'post-footer' );?>
+<?php get_template_part( 'partials/partial', 'modules' ); ?>
 
 </article>
 
@@ -42,5 +46,5 @@ get_header();
 
 </main>
 
-<!-- Footer-->    
+<!-- Footer-->
 <?php get_footer(); ?>

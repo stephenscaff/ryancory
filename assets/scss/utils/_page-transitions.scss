@@ -1,0 +1,64 @@
+//----------------------------------------------
+//  Page Transitions
+//  Interactions on page out and page in.
+//  Via js, we're adding an 'is-exiting' class
+//  on page out, and on page in, we're adding
+//  an 'is-loading' class, followed by 'is-loaded'.
+//
+//  @see js/components/_page-transitions.js
+//----------------------------------------------
+
+.is-exiting{
+
+  // Sequentially fade shit out.
+  main {
+    animation: fade-out 0.75s 1s ease both;
+  }
+
+  main section * + * {
+    //animation: fade-out 0.5s ease both;
+    //@include nth-ani-delay(10, 0.1s);
+  }
+}
+
+main {
+  opacity: 0;
+
+  .is-loaded & {
+    opacity: 1;
+    transition: opacity 1s ease;
+  }
+}
+
+
+
+
+.oh{
+  position: relative;
+  display: block;
+  overflow-y: hidden;
+  padding: 0.02em 0;
+
+  //animation: slide-up;
+  span{
+    position: relative;
+    display: inline-block;
+    //animation: slide-up;
+    transform:translate3d(0,140%,0);
+    opacity: 0;
+    transition: transform 0.4s ease, opacity 0.8s ease;
+  }
+
+  .is-loaded & span{
+    transform:translate3d(0,0%,0);
+    opacity: 1;
+    transition: transform 0.6s ease-in-out, opacity 0.3s ease;
+
+    @include nth-trans-delay-nested(10, 0.1s)
+  }
+
+  .is-exiting & span {
+    transform:translate3d(0,140%,0);
+    opacity: 0;
+  }
+}

@@ -16,9 +16,9 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
   <div class="site-menu__grid">
     <nav class="site-menu__nav">
       <a class="site-menu__link" href="<?php echo jumpoff_page_url('home'); ?>"><span>Home</span></a>
-      <a class="site-menu__link" href="<?php echo jumpoff_page_url('films', true); ?>"><span>Films</span></a>
-      <a class="site-menu__link" href="<?php echo jumpoff_page_url('photos', true); ?>"><span>Photos</span></a>
-      <a class="site-menu__link" href="<?php echo jumpoff_page_url('stories'); ?>"><span>Stories</span></a>
+      <a class="site-menu__link" href="<?php echo jumpoff_page_url('film', true); ?>"><span>Films</span></a>
+      <a class="site-menu__link" href="<?php echo jumpoff_page_url('photo', true); ?>"><span>Photos</span></a>
+      <a class="site-menu__link no-trans" href="<?php echo jumpoff_page_url('stories'); ?>"><span>Stories</span></a>
       <a class="site-menu__link" href="<?php echo jumpoff_page_url('about'); ?>"><span>About</span></a>
     </nav>
 

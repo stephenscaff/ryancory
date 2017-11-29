@@ -12,3 +12,6 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 get_template_part( 'partials/partial', 'head' );
 get_template_part( 'partials/partial', 'header' );
 get_template_part( 'partials/partial', 'menu' );
+
+?>
+<section class="site-content">

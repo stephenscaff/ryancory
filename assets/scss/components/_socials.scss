@@ -1,0 +1,24 @@
+//--------------------------------------------
+// Social Nav / List
+//--------------------------------------------
+.socials {
+  padding: $pad 0;
+
+  &__nav {
+    @include flex-row(
+    $v-align:center,
+    $h-align:center,
+    $mobile:true
+    )
+  }
+
+  a {
+    @extend .btn;
+    margin: $pad-xs $pad-xs;
+  }
+}
+
+
+.heading + .socials {
+    padding-top: $pad-sm;
+}

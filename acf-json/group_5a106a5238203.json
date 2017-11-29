@@ -1,0 +1,54 @@
+{
+    "key": "group_5a106a5238203",
+    "title": "Styles - Padding",
+    "fields": [
+        {
+            "key": "field_5a106a5777cf1",
+            "label": "padding",
+            "name": "padding",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "no-pad": "No Pad",
+                "pad": "Default",
+                "pad-lg": "Large",
+                "pad-t": "Top",
+                "pad-b": "Bottom"
+            },
+            "default_value": [
+                "pad"
+            ],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1511034700
+}

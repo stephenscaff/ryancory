@@ -1,23 +1,21 @@
 /*jshint unused:false */
-/*global jQuery */
-/*jshint unused:false */
 /*jshint -W081 */
-jQuery(document).ready(function( $ ) {
-  var s,
-  LoadMore = {
-    
-    // Settings Object for variables
-    settings: {
-      nextLink: wpLoadMore.nextLink,
-      pageNum:parseInt(wpLoadMore.startPage) + 1,
-      maxPages: parseInt(wpLoadMore.maxPages),
-      postsContainer: ("#js-posts"),
-      linkContainer: $(".load-more"),
-      link: $("#js-load-more"),
-      linkButton: $("#js-load-more .btn"),
-      linkText: "Keep Reading",
-      linkLoadingText: 'Loading...',
-    },
+
+
+var FetchMore = (function() {
+
+
+  var nextLink = wpFetchMore.nextLink,
+      pageNum = parseInt(wpFetchMore.startPage) + 1,
+      maxPages = parseInt(wpFetchMore.maxPages),
+      link = document.querySelector('#js-load-more'),
+      linkContainer = document.querySelector('.load-more'),
+      linkBtn = document.querySelector('#js-load-more .btn'),
+      postsContainer = document.querySelector('#js-posts'),
+      linkText = "Keep Reading",
+      linkLoadingText = 'Loading...';
+
+  return{
 
     /**
      * Init
@@ -28,65 +26,79 @@ jQuery(document).ready(function( $ ) {
     },
 
     /**
-     * Bind all our events
+     * Bind our events
      */
     bindEvents: function(){
 
-      LoadMore.hideLink();
-      
       // Main click event
-      s.link.click(function(e) {
+      link.addEventListener('click', function (e) {
         e.preventDefault();
-        // If we have paginated posts
-        if (s.pageNum <= s.maxPages) {
-          LoadMore.loadPosts();
+        if (pageNum <= maxPages) {
+          FetchMore.startAnimation();
+          FetchMore.loadPosts();
+          FetchMore.checkLink();
         }
-        LoadMore.hideLink();
       });
+
+      FetchMore.checkLink();
     },
 
     /**
      * Hide link if no more posts
      */
-    hideLink: function() {
-      if (s.pageNum > s.maxPages) {
-        //s.linkContainer.addClass('is-hidden');
-        s.linkContainer.delay(500).fadeOut(800);
+    checkLink: function() {
+      console.log('check check')
+      console.log(pageNum, maxPages)
+      if (pageNum >= maxPages) {
+        linkContainer.classList.add('fade-out');
       }
-    },
-
-    /**
-     * Updates paginaion pages
-     */
-    updateText: function(){
-      s.link.text(s.loadingText);
     },
 
     /**
      * Gets Posts from available pagination
      */
     loadPosts: function(){
-      $.get(s.nextLink, function(data) {
-        $(data).find(s.postsContainer).children().appendTo(s.postsContainer).hide().slideDown('400');
-
-        // Init Lazy load on inserted images
-        site.lazy();
-
-      }).done(function(data) {
-        LoadMore.endAnimation();
+      fetch(nextLink)
+      .then( function (response) {
+        return response.text();
+      })
+      .then( function (data) {
+        FetchMore.displayPosts(data);
+      })
+      .then ( function () {
+        FetchMore.updatePage()
+        FetchMore.endAnimation()
+      })
+      .catch( function(error) {
+        console.log(error);
       });
-      LoadMore.animateLoader();
-      
-      // Update Pagination pages
-      LoadMore.updatePage();
+    },
+
+    /**
+     * Display posts
+     * Uses a doc fragment to store and add
+     * our fetched text() (html) response
+     */
+    displayPosts: function(data) {
+      var docFrag = document.createDocumentFragment(),
+          fragDiv = document.createElement("div");
+
+      fragDiv.innerHTML = data;
+      docFrag.appendChild(fragDiv);
+
+      var fetchedPosts = docFrag.querySelector('#js-posts'),
+          fetchedPostsHTML = fetchedPosts.innerHTML;
+
+      postsContainer.insertAdjacentHTML('beforeend', fetchedPostsHTML);
+
     },
 
     /**
      * Begins animation
      */
-    animateLoader: function(){
-      s.linkContainer.addClass('is-animating');
-      s.linkButton.text('loading...');
+    startAnimation: function(){
+      linkContainer.classList.add('is-animating');
+      linkBtn.innerHTML = 'loading...';
     },
 
     /**
@@ -94,8 +106,8 @@ jQuery(document).ready(function( $ ) {
      */
     endAnimation: function(){
       setTimeout(function() {
-       s.linkContainer.removeClass('is-animating');
-       s.linkButton.text('Keep Reading');
+       linkContainer.classList.remove('is-animating');
+       linkBtn.innerText = 'Keep Reading';
       }, 900);
     },
 
@@ -103,14 +115,15 @@ jQuery(document).ready(function( $ ) {
      * Updates paginaion pages
      */
     updatePage: function(){
-      s.pageNum++;
-      s.nextLink = s.nextLink.replace(/\/page\/[0-9]*/, '/page/' + s.pageNum);
-      console.log(s.nextLink, s.pageNum);
+      pageNum++;
+      nextLink = nextLink.replace(/\/page\/[0-9]*/, '/page/' + pageNum);
+      console.log(nextLink, pageNum);
     },
   };
+})();
 
-  // Let's Go!
-  if($('.load-more').length){
-    LoadMore.init();
-  }
-});
+if (document.querySelector('.load-more')) {
+  document.addEventListener("DOMContentLoaded", function(event) {
+    FetchMore.init();
+  });
+}

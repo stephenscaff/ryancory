@@ -12,14 +12,15 @@ v<?php
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-$content = get_sub_field('content'); 
-$grid = get_sub_field('grid_width');  
-
+$content = get_sub_field('content');
+$grid = get_sub_field('grid_width');
+$pad_field = get_sub_field('padding');
+$pad = jumpoff_field($pad_field);
 ?>
 
 <!-- Content -->
-<section class="content content--module">
-  <div class="<?php echo $grid; ?>">
+<section class="content <?php echo $pad; ?> -module">
+  <div class="grid-sm">
     <?php echo $content; ?>
   </div>
 </section>

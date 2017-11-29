@@ -1,0 +1,22 @@
+//----------------------------------------------
+//  Gal
+//  Styles for the gallery module, that offers
+//  a series of images at full or half width.
+//-----------------------------------------------
+
+.mast-film {
+  padding: $pad-xl 0 $pad-xs;
+
+  &__pretitle {
+    display: block;
+    margin-bottom: $pad-sm;
+    font-size: $font-base;
+    font-family: $font-paragraph;
+    font-weight: 400;
+
+  }
+  &__title {
+    max-width: 17em;
+    @extend %font-title-lg;
+  }
+}

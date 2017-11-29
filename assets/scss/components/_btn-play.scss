@@ -1,0 +1,126 @@
+//----------------------------------------------
+//  Play Button SVG / Interaction
+//----------------------------------------------
+$pb-wxh: 6em;
+$pb-inner: 1px;
+
+.btn-play{
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+
+
+  &__icon{
+    position: relative;
+    width: $pb-wxh;
+    height: $pb-wxh;
+    margin: 1em;
+  }
+  &__circle{
+    position: absolute;
+    top: 1px;
+    bottom: 1px;
+    right: 1px;
+    left: 1px;
+    border-radius: 50%;
+    border: 2px solid rgba($color-alpha, 0.7);
+  }
+
+  &__circle-inner{
+    z-index: 10;
+    position: relative;
+    width: $pb-wxh;
+    height: $pb-wxh;
+    fill: none;
+    stroke: $color-alpha;
+    stroke-width: 3;
+    stroke-dasharray: 185;
+    stroke-dashoffset: 185;
+    animation: stroke-dash-reverse 0.7s $ease-cb forwards;
+
+    path{
+      transition: stroke 1s ease;
+    }
+  }
+
+  // Play Button triangle
+  &__triangle{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%,-50%,0);
+    width: .875rem;
+    height: 1.5625rem;
+    margin-left: .125rem;
+    fill: none;
+    stroke: rgba(255,255,255,0.8);
+    transition: all .3s ease-in-out;
+  }
+
+  &__text{
+    color: #fff;
+    align-self: center;
+    @media (man-width: $mq-med){
+      display: none;
+    }
+  }
+}
+
+//----------------------------------------------
+//  Play Button : HOver
+//-----------------------------------------------
+.btn-play:hover, a:hover .btn-play{
+
+  .btn-play__circle{
+    transition-delay: 0.8s;
+  }
+
+  .btn-play__circle-inner{
+    animation: stroke-dash 1.2s $ease-cb forwards;
+    animation-delay: 0;
+  }
+
+  .btn-play__triangle{
+    //stroke: rgba(0,0,0,0.4);
+    stroke-width: 2px;
+    //fill: rgba(#000,0);
+    transition: stroke 0.3s ease;
+
+    polygon{
+      //fill: rgba(0,0,0,0.4);
+      //transition: fill 0.3s 9s ease;
+    }
+  }
+}
+
+//----------------------------------------------
+//  Play Button SVG Animations
+//-----------------------------------------------
+@keyframes stroke-dash {
+  0% {
+    stroke-dashoffset: 185;
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes stroke-dash-reverse {
+  0% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: 185;
+    opacity: 0;
+  }
+}

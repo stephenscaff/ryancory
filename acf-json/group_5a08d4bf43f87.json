@@ -36,6 +36,13 @@
                 "operator": "==",
                 "value": "photo"
             }
+        ],
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "cpt-acf-photo"
+            }
         ]
     ],
     "menu_order": 0,
@@ -46,5 +53,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1510578825
+    "modified": 1511965933
 }

@@ -12,7 +12,7 @@ get_header();
 ?>
 <main role="main">
 
-<section class="mast bg-grey-light">
+<section class="mast -home">
   <figure class="mast__bg" style="background-image:url(<?php echo jumpoff_img(); ?>/home/home-mast-bg-1.jpg)"></figure>
   <div class="grid-lg">
     <h1 class="mast__headline">Hi, I’m Ryan & I love to create cool shit for cool people.</h1>
@@ -22,27 +22,41 @@ get_header();
 
 
 <section class="vid-card -full">
-  <div class="grid-xl">
-    <a class="vid-card__link">
+<div class="grid-xl">
+  <a class="vid-card__link">
 
-      <figure class="vid-card__bg" style="background-image: url()"></figure>
-      <figure class="vid-card__bg-vid bg-vid">
-        <span class="bg-vid__transition"></span>
-        <div class="vid-card__scaler">
-        <video class="bg-vid__vid" autoplay="" playsinline="" loop="" muted poster="">
-          <source type="video/mp4" src="<?php echo jumpoff_path(); ?>/videos/tmp-vid.mp4">
-          <!-- <source type="video/webm" src=""> -->
-        </video>
-        </div>
-      </figure>
-      <div class="vid-card__content">
-        <?php get_template_part( 'partials/partial', 'play-btn' ); ?>
+    <figure class="vid-card__bg" style="background-image: url()"></figure>
+    <figure class="vid-card__bg-vid bg-vid">
+      <span class="bg-vid__transition"></span>
+      <div class="vid-card__scaler">
+      <video class="bg-vid__vid" autoplay="" playsinline="" loop="" muted poster="">
+        <source type="video/mp4" src="<?php echo jumpoff_path(); ?>/videos/tmp-vid.mp4">
+        <!-- <source type="video/webm" src=""> -->
+      </video>
       </div>
-    </a>
-  </div>
+    </figure>
+    <div class="vid-card__content">
+      <?php get_template_part( 'partials/partial', 'play-btn' ); ?>
+    </div>
+  </a>
+</div>
 </section>
 
+<!-- <div class="js-plyr">
+<div class="grid-lg">
+<video poster="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.jpg" controls crossorigin>
+  <!-- Video files -->
+  <source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.mp4" type="video/mp4">
+  <source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.webm" type="video/webm">
+</video>
+</div>
+</div> -->
 
+<div class="js-plyr">
+  <div class="grid-lg">
+<div data-type="vimeo" data-video-id="143418951"></div>
+</div>
+</div>
 
 <section class="intro pad-b-lg">
   <div class="grid">

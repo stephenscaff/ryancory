@@ -1,0 +1,54 @@
+{
+    "key": "group_5a108d648d961",
+    "title": "Styles - Grid",
+    "fields": [
+        {
+            "key": "field_5a108d69aaf61",
+            "label": "Grid Size",
+            "name": "grid",
+            "type": "select",
+            "instructions": "Select a container\/grid Size",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "grid-sm": "Small",
+                "grid": "Medium",
+                "grid-lg": "Large",
+                "grid-xl": "Xlarge",
+                "grid-full": "Full Width"
+            },
+            "default_value": [
+                "grid-xl"
+            ],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "widget",
+                "operator": "==",
+                "value": "tag_cloud"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1511034712
+}

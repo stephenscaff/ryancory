@@ -1,0 +1,43 @@
+{
+    "key": "group_5a1d7a1f37811",
+    "title": "Film Title",
+    "fields": [
+        {
+            "key": "field_5a1d7a335c5a0",
+            "label": "Film Title",
+            "name": "film_title",
+            "type": "text",
+            "instructions": "Provide a longer intro statement title.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "film"
+            }
+        ]
+    ],
+    "menu_order": -1,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1511881335
+}

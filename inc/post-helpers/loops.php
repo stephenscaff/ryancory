@@ -8,12 +8,12 @@
  *  @param    string $post_cat = ('category-nicename' or null for all posts)
  *  @param    int  $num_posts = number of posts to show
  *  @param    string $content_type = file name for content, ie; 'posts' = partials/content/content-posts
- *  @example  jumpoff_get_posts('category-name', 7) or jumpoff_get_posts(null, 7) 
+ *  @example  jumpoff_get_posts('category-name', 7) or jumpoff_get_posts(null, 7)
  *  @return   $posts
- */ 
+ */
 
 function jumpoff_get_posts($post_cat, $num_posts, $content_type){
-  global $post ; 
+  global $post ;
 
   $args = array(
    'posts_per_page'   => $num_posts,
@@ -22,9 +22,7 @@ function jumpoff_get_posts($post_cat, $num_posts, $content_type){
   );
 
   $posts = get_posts( $args );
-  // set_transient( 'posts_query', $posts, 12 * 60 * 60 );
   foreach ( $posts as $post ) : setup_postdata( $post );
-    //Get template form partials/content/content-category-featured
    get_template_part( 'partials/content/content', $content_type );
 
   endforeach;
@@ -36,16 +34,16 @@ function jumpoff_get_posts($post_cat, $num_posts, $content_type){
 /**
  *  jumpoff_ft_posts()
  *
- *  Get Posts by term under custom taxonomy 'post-functions', 
+ *  Get Posts by term under custom taxonomy 'post-functions',
  *
  * @param    string $$post_term = term under taxonomy 'post-functions'
  * @param    int  $num_posts = number of posts. use -1 for all.
  * @param    string $content_type = content loop file name (all are prefixed with 'content-'')
  * @example  jumpoff_ft_posts('featured', '10', 'feed')
  * @return   $posts
- */ 
+ */
 function jumpoff_ft_posts($post_term, $num_posts, $content_type){
-  global $post ; 
+  global $post ;
 
   $args = array(
     'posts_per_page'   => $num_posts,
@@ -78,10 +76,10 @@ function jumpoff_ft_posts($post_term, $num_posts, $content_type){
  * @param    string  $content_type Content loop file name (all are prefixed with 'content-'')
  * @example  jumpoff_cpts('team', '10', 'team')
  * @return   $posts
- */ 
+ */
 
 function jumpoff_cpts($post_type, $num_posts, $content_type){
-  global $post ; 
+  global $post ;
 
   $args = array(
     'posts_per_page'   => $num_posts,
@@ -94,7 +92,7 @@ function jumpoff_cpts($post_type, $num_posts, $content_type){
   // set_transient( 'posts_query', $posts, 12 * 60 * 60 );
   foreach ( $posts as $post ) : setup_postdata( $post );
    get_template_part( 'partials/content/content', $content_type );
-  $counter++; 
+  $counter++;
   endforeach;
   wp_reset_postdata();
 
@@ -114,9 +112,9 @@ function jumpoff_cpts($post_type, $num_posts, $content_type){
  * @param    string  $content_type Content loop file name (all are prefixed with 'content-'')
  * @example  jumpoff_cpt_tax('products', 'product-categories', $term, -1, 'products');
  * @return   $posts
- */ 
+ */
 function jumpoff_cpt_tax($post_type, $tax, $term, $num_posts, $content_type){
-  global $post ; 
+  global $post ;
 
   $args = array(
     'posts_per_page'   => $num_posts,
@@ -137,7 +135,7 @@ function jumpoff_cpt_tax($post_type, $tax, $term, $num_posts, $content_type){
   // set_transient( 'posts_query', $posts, 12 * 60 * 60 );
   foreach ( $posts as $post ) : setup_postdata( $post );
    get_template_part( 'partials/content/content', $content_type );
-  //$counter++; 
+  //$counter++;
   endforeach;
   wp_reset_postdata();
 

@@ -1,0 +1,13 @@
+//----------------------------------------------
+//  Gal
+//  Styles for the gallery module, that offers
+//  a series of images at full or half width.
+//-----------------------------------------------
+
+$grid-item-pad: $pad-sm;
+
+.halfs {
+  &__grid {
+    @include flex-grid(1, 2, $pad: $pad-sm);
+  }
+}

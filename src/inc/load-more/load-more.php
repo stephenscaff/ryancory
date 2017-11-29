@@ -9,15 +9,15 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-function jumpoff_load_more() {
+function jumpoff_fetch_more() {
   global $wp_query;
-     
+
   // Add to index/archive pages
-  if( is_home() || is_archive() || is_tax() ) {  
-  
+  if( is_home() || is_archive() || is_tax() ) {
+
   // Queue JS
-  wp_enqueue_script('jumpoff_load_more_js', 
-    get_template_directory_uri() . '/inc/load-more/load-more.js', array('jquery'), '1.0');
+  wp_enqueue_script('jumpoff_fetch_more_js',
+  get_template_directory_uri() . '/inc/load-more/load-more.js', '', false, true );
 
   // What page are we on?
   $paged = ( get_query_var('paged') > 1 ) ? get_query_var('paged') : 1;
@@ -27,8 +27,8 @@ function jumpoff_load_more() {
 
   // Some parameters for the JS.
   wp_localize_script(
-    'jumpoff_load_more_js',
-    'wpLoadMore',
+    'jumpoff_fetch_more_js',
+    'wpFetchMore',
       array(
         'startPage'           => $paged,
         'maxPages'            => $max_pages,
@@ -37,4 +37,4 @@ function jumpoff_load_more() {
     );
   }
 }
-add_action('template_redirect', 'jumpoff_load_more');
+add_action('template_redirect', 'jumpoff_fetch_more');

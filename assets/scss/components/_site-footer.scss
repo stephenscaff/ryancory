@@ -1,0 +1,17 @@
+//--------------------------------------------
+// Site Footer
+//--------------------------------------------
+.site-footer{
+  padding: $pad 0;
+  text-align: right;
+
+  &__nav{
+    text-align: right;
+  }
+
+  a {
+    @include links($color-grey-dark, $color-alpha);
+    font-style: italic;
+    margin-left: $pad-xs;
+  }
+}

@@ -1,0 +1,8 @@
+.load-more {
+  padding: $pad 0;
+  text-align:center;
+
+  &.is-animating .btn:after{
+    animation: link-hover .8s cubic-bezier(.58,.3,.005,1) 0s infinite;
+  }
+}

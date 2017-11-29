@@ -13,15 +13,15 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 ?>
 
-<section class="heading">
+<section class="heading pad-t-lg bg-grey-dark">
   <header class="grid-lg">
-    <h2 class="heading__title">Related News</h2>
+    <h2 class="heading__title">Keep Reading</h2>
   </header>
 </section>
 
-<section class="posts pad">
+<section class="feeds pad bg-grey-dark">
   <div class="grid-xl">
-    <div class="posts__grid">
+    <div class="feeds__grid">
 <?php
 $cat = jumpoff_get_cat_slug();
 $args = array(
@@ -33,14 +33,13 @@ $args = array(
   'post__not_in' => array($post->ID),
   'tax_query' => array()
 );
- 
+
 $posts = get_posts( $args );
 foreach ( $posts as $post ) : setup_postdata( $post );
-  get_template_part( 'partials/content/content', 'post' );
+  get_template_part( 'partials/content/content', 'feed' );
 endforeach;
 wp_reset_postdata();
 ?>
     </div>
   </div>
 </section>
-

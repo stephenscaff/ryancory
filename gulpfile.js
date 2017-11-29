@@ -7,7 +7,7 @@ const
   newer         = require('gulp-newer'),
   imagemin      = require('gulp-imagemin'),
   svgo          = require('gulp-svgo'),
-  uglify        = require('gulp-uglify'),
+  uglify        = require('gulp-uglifyes'),
   jshint        = require('gulp-jshint'),
   sass          = require('gulp-sass'),
   autoprefixer  = require('gulp-autoprefixer'),
@@ -24,10 +24,8 @@ const
 
 const buildInclude  = [
   // include common file types
-  'src/**/*.php',
+  'src/**/*',
   'src/acf-json/',
-  'src/inc/*.js',
-
   // include specific files and folders
   'src/screenshot.png',
   'src/style.css',
@@ -187,22 +185,22 @@ gulp.task('jquery', () => {
 /**
  * JS Hint
  */
-gulp.task('jshint', () => {
-  var onError = function(err) {
-    notify.onError({
-      title:    "JS Error",
-      subtitle: "JS Hint!",
-      message:  "Error: <%= error.message %>",
-      sound:    "Beep"
-    })(err);
+ gulp.task('jshint', () => {
+   var onError = function(err) {
+     notify.onError({
+       title:    "JS Error",
+       subtitle: "JS Hint!",
+       message:  "Error: <%= error.message %>",
+       sound:    "Beep"
+     })(err);
 
-    this.emit('end');
-  };
-  gulp.src(folder.src + 'assets/js/**/*')
-    .pipe(jshint())
-    .pipe(jshint.reporter('default'))
-    .pipe(plumber({errorHandler: onError}));
-});
+     this.emit('end');
+   };
+   gulp.src(folder.src + 'assets/js/**/*')
+     .pipe(jshint({ esversion: 6 }))
+     .pipe(jshint.reporter('default'))
+     .pipe(plumber({errorHandler: onError}));
+ });
 
 
 /**
@@ -237,19 +235,12 @@ gulp.task('run', [
 gulp.task('watch', () => {
 
   gulp.watch(folder.src + 'assets/images/**/*', ['images']);
-
   gulp.watch(folder.src + 'assets/scss/**/*', ['scss']);
-
   gulp.watch(folder.src + 'inc/admin/admin-theme/assets/scss/**/*', ['wp_admin_scss']);
-
   gulp.watch(folder.src + 'assets/js/**/*', ['js']);
-
   gulp.watch(folder.src + 'assets/js/**/*', ['jquery']);
-
   gulp.watch(folder.src + '**', ['wp']);
-
   gulp.watch(folder.src + 'assets/images/**/*', ['svg2php']);
-
   gulp.watch(folder.src + 'assets/videos/**/*', ['videos']);
 
 });

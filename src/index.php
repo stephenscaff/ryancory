@@ -11,27 +11,24 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 get_header(); ?>
 
-<!-- Main --> 
-<main role="main" class="">
+<!-- Main -->
+<main role="main" class="has-header-offset">
 
-<section class="mast pad-lg">
-  <div class="grid-sm">
-    <h1 class="mast__title">The Jumpoff</h1>
-    <h2 class="mast__subtitle color-alpha">Just a simple WP / Gulp starter to set shit off.</h2>
-    <hr class="sep">
-    <p class="mast__text">Contains a bit of useful css, sensible scss/js structuring, a js includes system (see src/assets/js/app.js), and system error notices.</p>
-  </div>
-</section>
 
+  <section class="heading pad">
+    <h1 class="heading__title">I Got Stories</h1>
+    <p class="heading__text">
+      You got eyballs.
+    </p>
+  </section>
 
 <!-- Posts -->
 <?php get_template_part( 'partials/partial', 'posts' );?>
 
 <!-- Pagination -->
-<?php get_template_part( 'partials/partial', 'pagination' );?>
+<?php get_template_part( 'partials/partial', 'load-more' );?>
 
 </main>
 
-<!-- Footer --> 
+<!-- Footer -->
 <?php get_footer(); ?>
-

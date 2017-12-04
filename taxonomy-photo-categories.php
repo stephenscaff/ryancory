@@ -14,17 +14,13 @@ get_header(); ?>
 <!-- MAIN -->
 <main role="main" class="has-header-offset">
 
-<section class="heading pad">
-  <h1 class="heading__title">Say Cheese</h1>
-  <p class="heading__text">
-    Let’s shoot some photos together.
-  </p>
-</section>
+<?php get_template_part( 'partials/partial', 'page-heading' ); ?>
 
 <!-- Filters -->
 <div class="sticky-wrap">
   <section class="filters js-sticky">
     <nav class="filters__nav">
+      <a class="" href="<?php echo jumpoff_page_url('photos', true); ?>">All</a>
       <?php echo jumpoff_filter_items('photo_cat', 'link'); ?>
     </nav>
   </section>

@@ -1,3 +1,23 @@
+function whichAnimationEvent(){
+  var t,
+      el = document.createElement("fakeelement");
+
+  var animations = {
+    "animation"      : "animationend",
+    "OAnimation"     : "oAnimationEnd",
+    "MozAnimation"   : "animationend",
+    "WebkitAnimation": "webkitAnimationEnd"
+  }
+
+  for (t in animations){
+    if (el.style[t] !== undefined){
+      return animations[t];
+    }
+  }
+}
+
+var animationEvent = whichAnimationEvent();
+
 /**
  *  Page Transitions
  *  All sexy like page transitions between page loads
@@ -64,26 +84,18 @@ var PageTransition = (function() {
       }
     },
 
-    beginExit: function(callback) {
-
-      SiteMenu.close();
-
-      setTimeout(function() {
-        PageTransition.exit();
-      }, s.menuCloseDuration);
-
-    },
     /**
      * Exit Page
      */
     exit: function() {
       s.html.classList.add('is-exiting');
-      s.html.addEventListener("transitionend", function(event) {
-        PageTransition.redirectPage();
-      }, false);
-      // setTimeout(function() {
+      // var transTest = document.querySelector('main');
+      // transTest.addEventListener("animationend", function(event) {
       //   PageTransition.redirectPage();
-      // }, s.exitDuration);
+      // }, false);
+      setTimeout(function() {
+        PageTransition.redirectPage();
+      }, s.exitDuration);
     },
 
     /**
@@ -108,25 +120,26 @@ var PageTransition = (function() {
           s.linkLocation = this.href;
 
           // Bail if body has no-trans class
-          if (s.html.classList.contains(noTrans) || transLink.classList.contains(noTrans)) return
+          if (s.html.classList.contains(noTrans) || this.classList.contains(noTrans)) return
           // Bail if modifer keys (must be before preventDefault)
           if (e.metaKey || e.ctrlKey || e.shiftKey) return;
 
-          if (e.target.parentElement.classList.contains('.site-menu__link')) {
-            s.isMenuLink = true;
-          }
           e.preventDefault();
 
-          if (s.isMenuLink = true) {
-            var siteMenu = document.querySelector('.site-menu');
+          if (this.classList.contains('site-menu__link')) {
+            console.log('menu Link')
+            //var siteMenu = document.querySelector('.site-menu');
+            var transTest = document.querySelector('.site-content');
+
             SiteMenu.close();
 
-            siteMenu.addEventListener("transitionend", function(event) {
+            transTest.addEventListener("transitionend", function(event) {
               PageTransition.exit();
               console.log('done')
             });
           } else {
-            //PageTransition.exit();
+            console.log('no menu link')
+            PageTransition.exit();
           }
 
         });
@@ -146,9 +159,6 @@ var PageTransition = (function() {
      */
     unloadWindow: function() {
       // For back button history
-      // window.onbeforeunload = function(e)  {
-      //   $(window).unbind('unload');
-      // });
       window.onbeforeunload = null;
     },
 
@@ -160,9 +170,6 @@ var PageTransition = (function() {
      */
     workaround: function() {
       // For Safari browser
-      // $(window).bind('pageshow', function(e) {
-      //   if (e.originalEvent.persisted) window.location.reload();
-      // });
       window.onpageshow = function(e) {
         if (e.persisted) window.location.reload();
       };

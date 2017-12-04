@@ -15,6 +15,7 @@ $gallery = 'images';
 $width = get_sub_field('grid_width');
 $pad_field = get_sub_field('padding');
 $pad = jumpoff_field_styler($pad_field);
+
 ?>
 
 <section class="gal <?php echo $pad; ?>">

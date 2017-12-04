@@ -20,13 +20,13 @@
             "max": "",
             "layouts": [
                 {
-                    "key": "5a0dada560809",
+                    "key": "5a2414fe0303f",
                     "name": "content-module",
                     "label": "Content Module",
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5a0dadd47e317",
+                            "key": "field_5a2414fe03040",
                             "label": "Content",
                             "name": "content",
                             "type": "clone",
@@ -42,7 +42,7 @@
                                 "group_5a08d4dca0e26"
                             ],
                             "display": "seamless",
-                            "layout": "",
+                            "layout": "block",
                             "prefix_label": 0,
                             "prefix_name": 0
                         }
@@ -114,8 +114,8 @@
                 },
                 {
                     "key": "5a1822a9615d8",
-                    "name": "video-popup-module",
-                    "label": "Video Popup Module",
+                    "name": "video-loop-module",
+                    "label": "Video Loop Module",
                     "display": "block",
                     "sub_fields": [
                         {
@@ -133,6 +133,37 @@
                             },
                             "clone": [
                                 "group_5a0d81bdc01a9"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                {
+                    "key": "5a22d7d9b29ad",
+                    "name": "video-module",
+                    "label": "Video Module",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5a22d7e2b29af",
+                            "label": "Video",
+                            "name": "video",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_5a22d79a4f930"
                             ],
                             "display": "seamless",
                             "layout": "block",
@@ -170,5 +201,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1511881117
+    "modified": 1512407498
 }

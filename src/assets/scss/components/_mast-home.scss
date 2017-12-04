@@ -1,0 +1,21 @@
+.mast.-home {
+  background-color: $color-grey-light;
+  max-height: 70vh;
+  @media (min-width: $mq-med) {
+    height: 100vh;
+    max-height: 100vh;
+  }
+
+  .mast__headline {
+    @media (max-width: $mq-med) {
+      max-width: 70%
+    }
+  }
+
+  .mast__bg {
+    animation: fade-in 2s ease both;
+    @media (max-width: $mq-med) {
+      background-position: 69%  50%;
+    }
+  }
+}

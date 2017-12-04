@@ -149,28 +149,28 @@ function photo_cat() {
  *
  * For Pathologists, the shared tax are division and specilatity.
  */
-// 
-//
-// add_filter( 'taxonomy_template', 'pathologists_tax_template' );
-//
-// function pathologists_tax_template( $path_template = '' ) {
-//
-//   $template = '';
-//   $current_post = get_queried_object();
-//   $current_tax = $current_post->taxonomy;
 //
 //
-//   // if ($current_tax == 'disease_state' OR 'methodology') {
-//   //   $template = locate_template( 'archive-test.php' );
-//   // }
-//
-//   if ( is_tax('photo_cat') ){
-//     $path_template = locate_template( 'archive-photos.php' );
-//   }
-//
-//  return $path_template;
-//
-// }
+add_filter( 'taxonomy_template', 'photos_tax_template' );
+
+function photos_tax_template( $path_template = '' ) {
+
+  $template = '';
+  $current_post = get_queried_object();
+  $current_tax = $current_post->taxonomy;
+
+
+  // if ($current_tax == 'disease_state' OR 'methodology') {
+  //   $template = locate_template( 'archive-test.php' );
+  // }
+
+  if ( is_tax('photo_cat') ){
+    $path_template = locate_template( 'archive-photo.php' );
+  }
+
+ return $path_template;
+
+}
 
 
 

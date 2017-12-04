@@ -19,26 +19,14 @@ $width = get_sub_field('grid_width');
 $pad_field = get_sub_field('padding');
 $pad = jumpoff_field_styler($pad_field);
 
-function vidClass() {
-  $class='';
-  if ($vimeo_id) {
-    $class = 'has-vimeo-vid';
-  } else {
-    $class = 'has-video';
-  }
-  return $class;
-}
-
-
 ?>
 <section class="vid-card -full">
-  <div class="grid-xl">
-    <a class="vid-card__link <?php echo vidClass(); ?>"
+  <div class="grid-lg">
+    <a class="vid-card__link <?php echo vidClass(); ?> js-inview"
       data-popup="video-<?php echo $vid_id; ?>"
       <?php if ($vimeoId ) : ?>
         data-vimeo-id="<?php echo $vimeo_id; ?>"
-      <?php endif; ?>
-    >
+      <?php endif; ?>>
       <figure class="vid-card__bg-vid bg-vid">
         <span class="bg-vid__transition"></span>
         <div class="vid-card__scaler">

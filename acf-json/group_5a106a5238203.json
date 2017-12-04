@@ -19,8 +19,11 @@
                 "no-pad": "No Pad",
                 "pad": "Default",
                 "pad-lg": "Large",
+                "pd-xl": "Xlarge",
                 "pad-t": "Top",
-                "pad-b": "Bottom"
+                "pad-t-lg": "Top Large",
+                "pad-b": "Bottom",
+                "pad-b-lg": "Bottom Large"
             },
             "default_value": [
                 "pad"
@@ -36,9 +39,9 @@
     "location": [
         [
             {
-                "param": "post_type",
+                "param": "widget",
                 "operator": "==",
-                "value": "post"
+                "value": "tag_cloud"
             }
         ]
     ],
@@ -50,5 +53,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1511034700
+    "modified": 1512406667
 }

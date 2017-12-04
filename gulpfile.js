@@ -135,7 +135,7 @@ gulp.task('wp_admin_scss', () => {
   .pipe(sourcemaps.init())
   .pipe(autoprefixer())
   .pipe(rename({ suffix: '.min' }))
-  .pipe(sourcemaps.write('.'))
+  //.pipe(sourcemaps.write('.'))
   .pipe(gulp.dest(folder.build + 'inc/admin/admin-theme/assets/css/'))
 });
 
@@ -161,12 +161,12 @@ gulp.task('js', () => {
     .pipe(sourcemaps.init())
     .pipe(include())
     .pipe (uglify ({
-      mangle: true,
-      compress: true,
-      output: { beautify: false }
+      mangle: false,
+      compress: false,
+      output: { beautify: true }
     }))
     .pipe(rename({ suffix: '.min' }))
-    .pipe(sourcemaps.write('.'))
+    //.pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(folder.build + 'assets/js/'));
 });
 
@@ -223,7 +223,6 @@ gulp.task('run', [
   'videos',
   'scss',
   'js',
-  'jquery',
   'wp',
   'svg2php',
   'wp_admin_scss'

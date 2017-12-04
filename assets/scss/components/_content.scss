@@ -1,10 +1,15 @@
-
+//--------------------------------------------
+// Content Regions
+// Includes general type styles for content
+// heavy elements
+//--------------------------------------------
 .content {
 
   h2 {
     @extend %font-title;
     margin-bottom: $pad-xs/2;
   }
+
   h3, h4 {
     @extend %font-subtitle;
   }
@@ -38,7 +43,6 @@
       &:before {
         content: '— ';
       }
-
     }
   }
 }

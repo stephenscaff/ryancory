@@ -10,6 +10,7 @@
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 ?>
+
 <body id="top" <?php body_class(); ?>>
 
 <header class="site-header">

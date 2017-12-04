@@ -1,0 +1,73 @@
+{
+    "key": "group_5a230af67c035",
+    "title": "Styles - Background Color",
+    "fields": [
+        {
+            "key": "field_5a230af67f288",
+            "label": "Background Color",
+            "name": "bg_color",
+            "type": "select",
+            "instructions": "Select a container\/grid Size",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "bg-white": "White",
+                "bg-grey-light": "Light Grey",
+                "bg-grey-dark": "Dark Grey"
+            },
+            "default_value": [
+                "grid-xl"
+            ],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "widget",
+                "operator": "==",
+                "value": "tag_cloud"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "film"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "photo"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1512247537
+}

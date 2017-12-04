@@ -13,6 +13,10 @@
   padding: $pad-lg 0;
 }
 
+.pad-xl {
+  padding: $pad-xl 0;
+}
+
 .pad-b {
   padding-bottom: $pad;
 }
@@ -45,11 +49,16 @@
 .fade-out{
   animation: fade-out 1s ease both;
 }
+
 //--------------------------------------------
 // Color Helpers
 //--------------------------------------------
 .color-alpha {
   color: $color-alpha;
+}
+
+.bg-white {
+  background-color: $color-white;
 }
 
 .bg-grey-light {
@@ -61,6 +70,24 @@
 
   & > *, a, h2,h3,h4,h5 {
     color: #fff !important;
+  }
+}
+
+.page-bg-grey-dark {
+  background-color: $color-grey-dark;
+
+  .u-menu-toggle__bars, .u-menu-toggle__bars:after, .u-menu-toggle__bars:before {
+    background-color: #fff;
+
+    .menu-is-open & {
+      background-color: $color-grey-dark !important;
+    }
+  }
+  & main {
+    background-color: $color-grey-dark;
+    * {
+       color: #fff;
+   }
   }
 }
 

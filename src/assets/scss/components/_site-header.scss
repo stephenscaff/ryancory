@@ -35,5 +35,11 @@
 }
 
 .has-header-offset {
-  margin-top: $site-header-height;
+  padding-top: $site-header-height;
+
+  .single-film & {
+    @media (max-width: $mq-med) {
+      padding-top: 0;
+    }
+  }
 }

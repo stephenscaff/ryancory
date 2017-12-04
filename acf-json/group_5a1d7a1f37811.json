@@ -6,8 +6,8 @@
             "key": "field_5a1d7a335c5a0",
             "label": "Film Title",
             "name": "film_title",
-            "type": "text",
-            "instructions": "Provide a longer intro statement title.",
+            "type": "textarea",
+            "instructions": "Provide a longer intro statement title.\r\nBreak into 2 lines for text slice effect",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -17,9 +17,9 @@
             },
             "default_value": "",
             "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "maxlength": "",
+            "rows": 2,
+            "new_lines": ""
         }
     ],
     "location": [
@@ -39,5 +39,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1511881335
+    "modified": 1512054637
 }

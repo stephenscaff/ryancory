@@ -39,31 +39,122 @@
 // //  }
 
 
+/*jshint -W030*/
+/*globals feature: false */
 
- (function() {
-   var plyrStops = document.querySelectorAll('.js-plyr-stop');
-   var players = document.querySelectorAll('.js-plyr');
+/**
+ * Global Site inits
+ */
+var site = {
 
-  plyr.setup(players);
+  /**
+   * Featured Init
+   */
+  // featureJS: function() {
+  //   // No-JS
+  //   $('html').removeClass('no-js');
+  //   // No-SVG
+  //   if (!feature.svg) $('html').addClass('no-svg');
+  //   // No-Flexbox
+  //   if (!feature.cssFlexbox) $('html').addClass('no-flexbox');
+  // },
 
-  Array.from(plyrStops).forEach(function (plyrStop) {
 
-    plyrStop.addEventListener('click', function (e) {
-          //players.stop();
 
-          var vids = document.querySelectorAll('video');
-          Util.forEach ( vids, function (index, vid) {
 
-            vid.pause();
+  plyr: function() {
+    plyr.setup(document.querySelectorAll('.js-plyr'), {
+      'autoplay': true,
+      'muted' : true,
+    });
+  },
 
-          });
+  /**
+   * Wow Init
+   */
+  scrollReveals: function() {
+    var wow = new WOW({
+      boxClass:     'js-inview',
+      animateClass: 'is-inview',
+      offset:       90,
+      live:         false,
 
-          console.log(plyrStop, plyr, players)
-        });
-      });
+      scrollContainer: null
+    });
 
- })();
+    wow.init();
+  },
 
+  workPromoSlider: function() {
+    var slider = tns({
+      container: '.js-slider-work',
+      items: 1,
+      slideBy: 'page',
+      autoplay: false,
+      mode: 'gallery',
+      controls: false,
+      arrowKeys: true,
+    });
+  },
+
+  mobileBgVid: function(){
+  var video = document.querySelectorAll('.bg-vid__vid');
+  enableInlineVideo(video, {
+    iPad: true
+  });
+},
+};
+
+/**
+ * Doc ready them inits
+ */
+window.addEventListener("load", function(event) {
+
+  site.scrollReveals();
+
+  if (document.querySelectorAll('.js-slider-work').length) {
+    console.log('hey')
+    site.workPromoSlider();
+  }
+
+  if (document.querySelectorAll('.js-plyr').length) {
+    site.plyr();
+  }
+
+  if (document.querySelectorAll('.bg-vid__vid').length) {
+    site.mobileBgVid();
+  }
+});
+
+ //
+ //
+ //
+ // (function() {
+ //   var plyrStops = document.querySelectorAll('.js-plyr-stop');
+ //   var players = document.querySelectorAll('.js-plyr');
+ //
+ //  plyr.setup(players);
+ //
+ //  Array.from(plyrStops).forEach(function (plyrStop) {
+ //
+ //    plyrStop.addEventListener('click', function (e) {
+ //          //players.stop();
+ //
+ //          var vids = document.querySelectorAll('video');
+ //          Util.forEach ( vids, function (index, vid) {
+ //
+ //            vid.pause();
+ //
+ //          });
+ //
+ //          console.log(plyrStop, plyr, players)
+ //        });
+ //      });
+ //
+ // })();
+ //
+ //
+ //
 
  //
  // (function() {

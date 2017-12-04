@@ -33,7 +33,7 @@ function jumpoff_field_styler($field, $spacer = false){
   $output;
   if ($field) {
     if ($spacer === true) {
-      $output = ' ' . $field;
+      $output = '  ' . $field;
     } else {
       $output = $field;
     }
@@ -47,6 +47,7 @@ function jumpoff_field_styler($field, $spacer = false){
  */
 function jumpoff_field_fallback ($field, $fallback) {
   $output;
+
   if ($field) {
     $output = $field;
   } else {

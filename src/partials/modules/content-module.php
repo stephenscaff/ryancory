@@ -1,4 +1,4 @@
-v<?php
+<?php
 /**
 * content-module
 *
@@ -15,7 +15,8 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 $content = get_sub_field('content');
 $grid = get_sub_field('grid_width');
 $pad_field = get_sub_field('padding');
-$pad = jumpoff_field($pad_field);
+$pad = jumpoff_field_styler($pad_field);
+
 ?>
 
 <!-- Content -->

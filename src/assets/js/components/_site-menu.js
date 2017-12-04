@@ -19,10 +19,10 @@ var SiteMenu = (function() {
      * Init
      */
     init: function() {
-      this.bind();
+      this.bindEvents();
     },
 
-    bind:function() {
+    bindEvents:function() {
 
       menuToggle.addEventListener('click', function (e) {
         SiteMenu.transitionState();
@@ -46,9 +46,8 @@ var SiteMenu = (function() {
     },
 
     transitionState: function(elem){
-
       if (isOpen) {
-          SiteMenu.close();
+        SiteMenu.close();
       } else {
         SiteMenu.open();
       }

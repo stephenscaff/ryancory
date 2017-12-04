@@ -73,7 +73,7 @@
 
   &:after {
     @include pseudo_el(-1);
-    background-color: rgba($color-grey-dark, 0.3);
+    background-color: rgba($color-grey-dark, 0.7);
     opacity: 0;
   }
 

@@ -1,6 +1,6 @@
 {
     "key": "group_5a0d81bdc01a9",
-    "title": "Video Pop Up",
+    "title": "Video Loop",
     "fields": [
         {
             "key": "field_5a184f14b2103",
@@ -20,9 +20,25 @@
             "esc_html": 0
         },
         {
+            "key": "field_5a2577cc52bc3",
+            "label": "Content",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
             "key": "field_5a1070fddef81",
             "label": "Video File",
-            "name": "video_file",
+            "name": "vl_video_file",
             "type": "file",
             "instructions": "",
             "required": 0,
@@ -39,13 +55,40 @@
             "mime_types": ""
         },
         {
-            "key": "field_5a184eeab2102",
-            "label": "Vimeo Id",
-            "name": "vimeo_id",
-            "type": "text",
-            "instructions": "Provide a Vimeo Id, if you want the popup to use a Vimeo Video.",
+            "key": "field_5a2577ea52bc4",
+            "label": "Has Video Popup",
+            "name": "vl_has_video_popup",
+            "type": "true_false",
+            "instructions": "Check to have the background video loop include a play button and launch a video popup.",
             "required": 0,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "Full Screen",
+            "ui_off_text": "Just a Loop"
+        },
+        {
+            "key": "field_5a184eeab2102",
+            "label": "Vimeo Id",
+            "name": "vl_vimeo_id",
+            "type": "text",
+            "instructions": "Provide a Vimeo Id, if you want the popup to use a Vimeo Video instead of the MP4 file.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5a2577ea52bc4",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -56,6 +99,64 @@
             "prepend": "",
             "append": "",
             "maxlength": ""
+        },
+        {
+            "key": "field_5a25786252bc5",
+            "label": "Styles",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5a25786952bc6",
+            "label": "Padding",
+            "name": "padding",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_5a106a5238203"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
+        },
+        {
+            "key": "field_5a25798820af3",
+            "label": "Background Color",
+            "name": "bg_color",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_5a230af67c035"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
         }
     ],
     "location": [
@@ -75,5 +176,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1511542614
+    "modified": 1512405421
 }

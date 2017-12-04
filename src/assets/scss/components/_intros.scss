@@ -1,5 +1,7 @@
 //--------------------------------------------
-// Intros
+// Intro Sections / modules
+// Section with title left, text or content right.
+// Reused for avarious site-wide patterns
 //--------------------------------------------
 .intro{
   padding: $pad 0;
@@ -36,8 +38,6 @@
       }
     }
   }
-
-
   &__main{
     @include flex-col(60%);
   }

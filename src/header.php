@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying the global header.
+ * The template for displaying the head, header and menu.
  *
  * @author    Stephen Scaff
  * @package   jumpoff/partials/partial-head
@@ -14,4 +14,5 @@ get_template_part( 'partials/partial', 'header' );
 get_template_part( 'partials/partial', 'menu' );
 
 ?>
+
 <section class="site-content">

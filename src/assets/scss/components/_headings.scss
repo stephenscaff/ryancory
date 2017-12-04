@@ -10,6 +10,10 @@
     margin-bottom: 0;
   }
 
+  &__title + &__subtitle {
+    margin-top: $pad-xs;
+  }
+
   &__link {
     @extend .btn;
     font-size: $font-base;
@@ -17,7 +21,11 @@
   }
 }
 
-
 .heading + .content {
     padding-top: $pad-sm;
+}
+
+.heading.-page {
+  padding-top: $pad;
+  padding-bottom: $pad-sm;
 }

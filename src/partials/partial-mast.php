@@ -22,9 +22,9 @@ $mast_icon = get_field('icons');
 
 <section class="mast mast--<?php echo $class ?>">
   <?php if ($mast_bg) : ?>
-    <figure class="mast__bg js-parallax" style="background-image:url(<?php echo $mast_bg['url'] ?>)"></figure>
+    <figure class="mast__bg" style="background-image:url(<?php echo $mast_bg['url'] ?>)"></figure>
   <?php else : ?>
-    <figure class="mast__bg js-parallax" style="background-image:url(<?php echo jumpoff_ft_img('full'); ?>)"></figure>
+    <figure class="mast__bg" style="background-image:url(<?php echo jumpoff_ft_img('full'); ?>)"></figure>
   <?php endif; ?>
   <div class="grid">
     <div class="mast__content">
@@ -36,7 +36,7 @@ $mast_icon = get_field('icons');
       <h1 class="mast__title"><?php the_title(); ?></h1>
     <?php endif; if ($mast_text) : ?>
       <p class="mast__text"><?php echo $mast_text; ?></p>
-    <?php endif; ?>  
+    <?php endif; ?>
     </div>
   </div>
 </section>

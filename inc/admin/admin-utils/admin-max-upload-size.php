@@ -15,7 +15,7 @@ class WP_Max_Image_Size {
   /**
    * Set max upload size
    */
-  const UPLOAD_MAX_SIZE = '500 KB';
+  const UPLOAD_MAX_SIZE = '800 KB';
 
   /**
    * Constructor

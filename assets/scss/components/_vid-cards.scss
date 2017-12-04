@@ -1,0 +1,96 @@
+//--------------------------------------------
+// Video Cards
+//--------------------------------------------
+.vid-card {
+  padding: $pad-sm 0;
+
+  &.-full {
+    padding: $pad 0;
+  }
+  .-is-vid-archive & {
+    padding: $pad-xs;
+  }
+
+  &__link {
+    cursor: pointer;
+  }
+  &__link, &__wrap {
+    z-index: 9;
+    position: relative;
+    display: flex;
+    align-items: center;
+    place-content: center;
+    //height: 25em;
+    padding-bottom: 56%;
+
+    //@include as_ratio_pseudo(1025, 567);
+
+    .-full & {
+      height: 25em;
+      @media (min-width: $mq-med) {
+        height: 32em;
+      }
+      @media (min-width: $mq-xl) {
+        height: 35em;
+      }
+    }
+  }
+
+  &__bg {
+    @include bg-img-abs(0);
+  }
+  &__figure{
+    margin-bottom: $pad-sm/2;
+    transform: scale(1);
+    transition: transform .3s ease-in-out;
+    overflow: hidden;
+    border-radius: $base-border-radius;
+
+    .photo__link:hover &, a:hover &{
+      transform: scale(.97);
+    }
+  }
+  &__bg, &__bg-vid {
+    border-radius: $base-border-radius;
+    transform: scale(1);
+    transition: transform .3s ease-in-out;
+
+    &:after {
+      @include pseudo_el();
+      background-color: rgba($color-grey-dark, 0.3);
+    }
+
+    .vid-card__link:hover &, a:hover &{
+      transform: scale(.97);
+    }
+  }
+  &__scaler {
+    height: 100%;
+    display: block;
+
+    .js-inview &{
+      transform: scale(1.5);
+      transition: transform 1s;
+      pointer-events: none;
+      visibility: hidden;
+    }
+
+    .js-inview.is-inview &{
+      pointer-events:auto;
+      visibility: visible;
+      transform: scale(1);
+      //animation: scale-down 1s ease both;
+    }
+
+    .vid-card__link:hover &, a:hover &{
+      transform: scale(1.2);
+      transition: transform .3s ease-in-out;
+    }
+  }
+
+  &__content {
+    position: absolute;
+    top: 50%;
+    transform: translate3d(0,-50%,0);
+  }
+}

@@ -12,21 +12,22 @@ var Util = (function() {
      * Would probs want to build this out a bit more
      *
      * @param  {el} Element to test
+     * @param  {threshold} Integar Amount of threshold
      * @return {boolean}
      */
-    isInView: function(el, offset) {
+    isInView: function(el, threshold) {
       // 'sup jquery
       if (typeof jQuery === "function" && el instanceof jQuery) {
         el = el[0];
       }
-      var winY = window.innerHeight || document.documentElement.clientHeight,
+      var threshold = Math.floor(threshold * 100),
+          winY = window.innerHeight - threshold || document.documentElement.clientHeight - threshold,
           bounds = el.getBoundingClientRect(),
-          isTopVisible = (bounds.top >= 0) && (bounds.top <= winY - offset);
+          isTopVisible = (bounds.top >= 0) && (bounds.top <= winY);
 
-      if (isTopVisible) {
-        return true;
-      }
+      return isTopVisible;
     },
+
 
     isAtTop: function(el) {
       var distance = $(el).offset().top,

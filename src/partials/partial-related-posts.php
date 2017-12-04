@@ -11,6 +11,18 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
+// Get id of current post
+$current_post = get_the_ID();
+
+// Content type logic
+$post_type = '';
+
+if (is_post_type('film')){
+  $post_type = 'film';
+} else {
+  $post_type = 'post';
+}
+
 ?>
 
 <section class="heading pad-t-lg bg-grey-dark">
@@ -25,13 +37,11 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 <?php
 $cat = jumpoff_get_cat_slug();
 $args = array(
-  'post_type' => 'post',
-  'category_name'    => $cat,
-  'posts_per_page'   => 3,
-  'orderby'          => 'date',
+  //'category_name'    => $cat,
+  'post_type'        => $post_type,
+  'posts_per_page'   => 2,
+  'post__not_in'     => array ($current_post),
   'order'            => 'DESC',
-  'post__not_in' => array($post->ID),
-  'tax_query' => array()
 );
 
 $posts = get_posts( $args );

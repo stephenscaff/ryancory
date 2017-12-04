@@ -40,6 +40,10 @@
     transition: all .8s cubic-bezier(.555,.205,.295,.975);
   }
 
+  &:hover:after, a:hover &:after {
+    animation: link-hover .8s cubic-bezier(.58,.3,.005,1) 0s 2;
+  }
+
   &:hover{
     color: $color-grey-dark;
     transition: color 0.5s $ease-cb-2;
@@ -52,23 +56,23 @@
 
 
 @keyframes link-hover {
-  0% {
-      -webkit-transform: translateX(0);
-      transform: translateX(0)
-  }
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0)
+    }
 
-  50% {
-      -webkit-transform: translateX(100%);
-      transform: translateX(100%)
-  }
+    50% {
+        -webkit-transform: translateX(100%);
+        transform: translateX(100%)
+    }
 
-  50.01% {
-      -webkit-transform: translateX(-100%);
-      transform: translateX(-100%)
-  }
+    50.01% {
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%)
+    }
 
-  to {
-      -webkit-transform: translateX(0);
-      transform: translateX(0)
-  }
+    to {
+        -webkit-transform: translateX(0);
+        transform: translateX(0)
+    }
 }

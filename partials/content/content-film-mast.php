@@ -16,7 +16,8 @@ $excerpt = jumpoff_excerpt('220');
 $ft_vid = get_field('featured_video');
 
 ?>
-<article class="mast -has-vid">
+
+<article class="mast -has-vid -center">
   <a class="mast__link" href="<?php echo $link; ?>">
     <!-- <figure class="mast__bg" style="background-image: url()"></figure> -->
     <figure class="mast__bg-vid bg-vid">

@@ -7,7 +7,7 @@
 * @version   1.0
 */
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) exit; 
 
 $title = get_the_title();
 $link = get_the_permalink();
@@ -15,7 +15,8 @@ $img = jumpoff_ft_img('large');
 $excerpt = jumpoff_excerpt('220');
 
 ?>
-<article class="post">
+
+<article class="post js-inview">
   <a class="post__link" href="<?php the_permalink(); ?>">
     <figure class="post__bg">
       <span class="post__scaler">

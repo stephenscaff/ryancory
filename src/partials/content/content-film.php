@@ -7,19 +7,21 @@
 * @version   1.0
 */
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) exit;
 
 $title = get_the_title();
 $link = get_the_permalink();
 $img = jumpoff_ft_img('large');
 $excerpt = jumpoff_excerpt('220');
 $ft_vid = get_field('featured_video');
+
 ?>
-<article class="intro -has-vid -is-vid-archive">
+
+<article class="intro -has-vid -is-vid-archive js-inview">
   <div class="grid-xl">
     <a class="intro__grid -link-wrap" href="<?php echo $link; ?>">
       <header class="intro__header">
-        <h2 class="intro__title"><?php echo $title; ?></h2>
+        <h2 class="intro__title oh -"><span><?php echo $title; ?></span></h2>
         <p class="intro__text"><?php echo $excerpt; ?></p>
         <span class="intro__btn btn">View Work</span>
       </header>

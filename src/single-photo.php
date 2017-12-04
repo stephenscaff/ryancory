@@ -13,9 +13,9 @@ get_header();
 
 $title = get_the_title();
 $subtitle = get_field('subtitle');
+
 ?>
 
-<!-- MAIN-->
 <main role="main" class="has-header-offset">
 
 <?php while (have_posts()) : the_post(); ?>
@@ -34,9 +34,6 @@ $subtitle = get_field('subtitle');
 </article>
 
 <?php endwhile; ?>
-
-<!-- Next -->
-<?php //get_template_part( 'partials/partial', 'next' );?>
 
 </main>
 

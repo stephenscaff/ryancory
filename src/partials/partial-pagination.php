@@ -3,7 +3,7 @@
  * Section: Pagination
  *
  * Calls pagination funciton
- *  
+ *
  *
  * @author    Stephen Scaff
  * @package   pocketprep/partials/sect-pagination
@@ -11,13 +11,11 @@
  * @see       inc/functions/pagination.php
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-  exit; // Exit if accessed directly
-}
-?>
-<?php 
-if ( function_exists('jumpoff_pagination') ) :
-  jumpoff_pagination(); 
-endif; 
-?>
+if ( ! defined( 'ABSPATH' ) ) exit;
 
+?>
+<?php
+if ( function_exists('jumpoff_pagination') ) :
+  jumpoff_pagination();
+endif;
+?>

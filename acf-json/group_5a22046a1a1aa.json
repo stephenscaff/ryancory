@@ -1,0 +1,198 @@
+{
+    "key": "group_5a22046a1a1aa",
+    "title": "Modules - Home",
+    "fields": [
+        {
+            "key": "field_5a22046a1d5e0",
+            "label": "Modules",
+            "name": "modules",
+            "type": "flexible_content",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "button_label": "Add Module",
+            "min": "",
+            "max": "",
+            "layouts": [
+                {
+                    "key": "5a0dada560809",
+                    "name": "content-module",
+                    "label": "Content Module",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5a22046a1efd8",
+                            "label": "Content",
+                            "name": "content",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_5a08d4dca0e26"
+                            ],
+                            "display": "seamless",
+                            "layout": "",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                {
+                    "key": "5a1822a9615d8",
+                    "name": "video-loop-module",
+                    "label": "Video Loop Module",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5a22046a1f030",
+                            "label": "Video",
+                            "name": "video",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_5a0d81bdc01a9"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                {
+                    "key": "5a22048675dde",
+                    "name": "intro-module",
+                    "label": "Intro Module",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5a22048675ddf",
+                            "label": "Intro",
+                            "name": "intro",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_5a2188c303c81"
+                            ],
+                            "display": "seamless",
+                            "layout": "",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                {
+                    "key": "5a22049d75de0",
+                    "name": "brands-module",
+                    "label": "Brands Module",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5a22049d75de1",
+                            "label": "Brands",
+                            "name": "brands",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_5a2201d23f64f"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                {
+                    "key": "5a22a8d891de2",
+                    "name": "work-promo-module",
+                    "label": "Work Promo Module",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5a22a8d891de3",
+                            "label": "Work Promo",
+                            "name": "work Promo",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_5a220230c54bc"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "34"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1512405622
+}

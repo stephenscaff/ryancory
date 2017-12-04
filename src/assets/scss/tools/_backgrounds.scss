@@ -43,6 +43,7 @@
 //  @param: $bg_opacity:[0.6] - alpha transparency level
 //----------------------------------------------
 @mixin bg-overlay($bg_hex: $color-grey-dark, $bg_opacity: 0.6) {
+  overflow: hidden;
   &:after {
     content: '';
     z-index: 0;

@@ -36,10 +36,29 @@
             "endpoint": 0
         },
         {
+            "key": "field_5a24145b03bc7",
+            "label": "Mast Pretitle",
+            "name": "mast_pretitle",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_5a1d6babdadc4",
             "label": "Mast Title",
             "name": "mast_title",
-            "type": "text",
+            "type": "textarea",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -50,14 +69,14 @@
             },
             "default_value": "",
             "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "maxlength": "",
+            "rows": 2,
+            "new_lines": ""
         },
         {
             "key": "field_5a1d6bc3dadc5",
-            "label": "Mast Text",
-            "name": "mast_text",
+            "label": "Mast Subtitle",
+            "name": "mast_subtitle",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -74,11 +93,35 @@
             "maxlength": ""
         },
         {
-            "key": "field_5a1d6c30dadc9",
-            "label": "Mast BG Vid",
-            "name": "mast_bg_vid",
+            "key": "field_5a2181dd95d66",
+            "label": "Mast Image",
+            "name": "mast_image",
+            "type": "image",
+            "instructions": "Upload a Bg Image",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_5a24141203bc6",
+            "label": "Mast Video",
+            "name": "mast_video",
             "type": "file",
-            "instructions": "Upload an optional background video",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -129,14 +172,39 @@
             "ajax": 0,
             "return_format": "value",
             "placeholder": ""
+        },
+        {
+            "key": "field_5a24028503bc5",
+            "label": "Media Position",
+            "name": "mast_media_position",
+            "type": "select",
+            "instructions": "Select media (image\/video) Position",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "-media-bg": "Behind Content",
+                "-media-below": "Below Content"
+            },
+            "default_value": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
         }
     ],
     "location": [
         [
             {
-                "param": "post_type",
+                "param": "widget",
                 "operator": "==",
-                "value": "post"
+                "value": "tag_cloud"
             }
         ]
     ],
@@ -146,7 +214,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": 1,
+    "active": 0,
     "description": "",
-    "modified": 1511879390
+    "modified": 1512406651
 }

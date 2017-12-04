@@ -1,0 +1,180 @@
+{
+    "key": "group_5a2207c2c6928",
+    "title": "Mast Home",
+    "fields": [
+        {
+            "key": "field_5a2207c2c9f92",
+            "label": "",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "The Home Mast creates a full viewport section to promote your badass self.",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_5a2207c2c9fb2",
+            "label": "Content",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5a2207c2c9fd7",
+            "label": "Mast Title",
+            "name": "hm_title",
+            "type": "textarea",
+            "instructions": "Break title into 2 lines for text slice effect.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 2,
+            "new_lines": ""
+        },
+        {
+            "key": "field_5a2207ff55518",
+            "label": "Mast Link",
+            "name": "hm_link",
+            "type": "page_link",
+            "instructions": "Select A Page Link",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "film",
+                "page",
+                "post"
+            ],
+            "taxonomy": [],
+            "allow_null": 0,
+            "allow_archives": 1,
+            "multiple": 0
+        },
+        {
+            "key": "field_5a22084255519",
+            "label": "Mast Link Text",
+            "name": "hm_link_text",
+            "type": "text",
+            "instructions": "Provide Text for the link playboy.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5a2208b72722b",
+            "label": "Mast Image",
+            "name": "hm_image",
+            "type": "image",
+            "instructions": "Upload a background image. Size to something like 2000x1200",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_5a2207c2ca00f",
+            "label": "Styles",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5a2207c2ca01d",
+            "label": "Align Content",
+            "name": "mast_align",
+            "type": "select",
+            "instructions": "-left : Left\r\n-centered : Centered",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": [],
+            "default_value": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "34"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1512179936
+}

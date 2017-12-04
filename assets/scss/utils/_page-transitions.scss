@@ -8,16 +8,25 @@
 //  @see js/components/_page-transitions.js
 //----------------------------------------------
 
+html, body {
+  background: $color-grey-light;
+}
+
+main {
+  background: #fff;
+}
+
 .is-exiting{
 
-  // Sequentially fade shit out.
   main {
-    animation: fade-out 0.75s 1s ease both;
+    animation: fade-out 1s 1s ease both;
   }
 
-  main section * + * {
-    //animation: fade-out 0.5s ease both;
-    //@include nth-ani-delay(10, 0.1s);
+  main article + article,
+  main a + a,
+  main section + section {
+    animation: fade-out 0.5s ease both;
+    @include nth-ani-delay(10, 0.1s);
   }
 }
 
@@ -31,34 +40,86 @@ main {
 }
 
 
-
-
 .oh{
   position: relative;
   display: block;
   overflow-y: hidden;
   padding: 0.02em 0;
 
-  //animation: slide-up;
   span{
     position: relative;
-    display: inline-block;
-    //animation: slide-up;
-    transform:translate3d(0,140%,0);
-    opacity: 0;
+    display: inline;
+    transform:translate3d(0,190%,0);
     transition: transform 0.4s ease, opacity 0.8s ease;
+    @media (min-width: $mq-med) {
+      display: inline-block;
+    }
   }
 
-  .is-loaded & span{
+  .is-loaded &:not(.-onscroll) span{
     transform:translate3d(0,0%,0);
     opacity: 1;
-    transition: transform 0.6s ease-in-out, opacity 0.3s ease;
-
-    @include nth-trans-delay-nested(10, 0.1s)
+    @include nth-trans-delay(10, 0.1s)
   }
 
-  .is-exiting & span {
-    transform:translate3d(0,140%,0);
-    opacity: 0;
+  .is-inview &.-onscroll span {
+    transform:translate3d(0,0%,0);
+    opacity: 1;
+    @include nth-trans-delay(10, 0.1s)
+  }
+}
+
+.is-exiting .oh span {
+  transform:translate3d(0,-190%,0) !important;
+  opacity: 0 !important;
+  //animation: slide-up 0.7s ease both;
+  @include nth-trans-delay(10, 0.1s)
+}
+
+
+
+
+
+
+.js-inview{
+  //visibility: visible !important;
+  pointer-events:none;
+  transform: translate3d(0, 20%, 0);
+  transition: transform 1s ease;
+
+  &.is-inview{
+    animation-duration: 0.75s;
+    animation-fill-mode: both;
+    pointer-events: auto;
+    // animation: fade-up 0.5s ease-in-out both;
+    transform: translate3d(0,0em, 0);
+
+  }
+}
+
+// [class*="__scaler"] {
+//   //transform: scale(1.2);
+// }
+//   .is-inview [class*="__scaler"]{
+//     //  animation: scaler 0.5s ease-in-out both;
+//     //transform: scale(1);
+//     //transition: transform 1s ease-in-out;
+//     pointer-events: auto;
+// visibility: visible;
+// -webkit-transform: scale(1);
+// transform: scale(1);
+// -webkit-animation: scale-down 1s ease both;
+// animation: scaler 1s ease both;
+//   }
+//
+
+
+@keyframes scaler {
+  0% {
+    transform: scale(1.5);
+  }
+
+  100% {
+    transform: scale(1);
   }
 }

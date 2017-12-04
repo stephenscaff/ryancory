@@ -17,8 +17,8 @@ $mast_vid = get_sub_field('mast_video');
 $mast_align = get_sub_field('mast_align');
 $mast_align_modifier = jumpoff_field_styler($mast_align);
 
-
 ?>
+
 <article class="mast -has-vi <?php echo $mast_align_modifier; ?>">
   <?php if ($mast_vid) : ?>
   <figure class="mast__bg-vid bg-vid">

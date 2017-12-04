@@ -1,5 +1,5 @@
 //--------------------------------------------
-// Site Menu
+// Stories / Posts Blocks
 //--------------------------------------------
 .post {
   display: block;
@@ -27,9 +27,9 @@
     width: 100%;
     cursor: pointer;
     overflow: hidden;
-
     //@include as_ratio_pseudo(1025, 567);
 
+    // Full Width Modifier
     .-full & {
       height: 25em;
       @media (min-width: $mq-med) {
@@ -40,10 +40,12 @@
       }
     }
   }
+
   &photo__bg {
     width: 100%;
     height: 100%;
   }
+
   &__img {
     @include bg-img-abs(0);
     @include bg-overlay($color-grey-dark, 0.7);
@@ -102,6 +104,9 @@
   }
 }
 
+//----------------------------------------------
+//  Load More Fade ins
+//-----------------------------------------------
 .post + .post {
-  animation: fade-in 0.7s 0.25s ease both;
+  animation: fade-up 0.7s 0.25s ease both;
 }

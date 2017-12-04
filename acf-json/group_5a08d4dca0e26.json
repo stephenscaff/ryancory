@@ -72,9 +72,9 @@
         },
         {
             "key": "field_5a08d7a93054f",
-            "label": "Padding2",
-            "name": "padding2",
-            "type": "select",
+            "label": "Grid Size",
+            "name": "grid",
+            "type": "clone",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -83,20 +83,13 @@
                 "class": "",
                 "id": ""
             },
-            "choices": {
-                "no-pad": "No Pad",
-                "pad": "Default",
-                "pad-lg": "Large",
-                "pad-t": "Top",
-                "pad-b": "Bottom"
-            },
-            "default_value": [],
-            "allow_null": 0,
-            "multiple": 0,
-            "ui": 0,
-            "ajax": 0,
-            "return_format": "value",
-            "placeholder": ""
+            "clone": [
+                "group_5a108d648d961"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
         },
         {
             "key": "field_5a106aaa48072",
@@ -137,5 +130,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1511025357
+    "modified": 1512232710
 }

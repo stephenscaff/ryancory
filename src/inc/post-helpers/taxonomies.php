@@ -14,8 +14,8 @@ function jumpoff_term_class($taxonomy) {
   if ($terms) {
     foreach ( $terms as $term ) {
       $str .= '-' . strtolower($term->name) . ' ';
-      return $str;
     }
+    return $str;
   }
 }
 

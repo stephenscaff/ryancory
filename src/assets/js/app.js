@@ -12,7 +12,6 @@
 //=include components/_video-cards.js
 //=include components/_popups.js
 //=include components/_sticky.js
-
 //=include components/_wow.js
 
 //=include _inits.js

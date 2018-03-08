@@ -22,7 +22,7 @@ $subtitle = get_field('subtitle');
 
 <article class="photo-single -has-modules">
 
-  <section class="heading pad">
+  <section class="heading -page">
     <h1 class="heading__title"><?php echo $title; ?></h1>
     <p class="heading__text">
       <?php echo $subtitle; ?>

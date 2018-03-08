@@ -18,15 +18,17 @@ main {
 
 .is-exiting{
 
-  main {
+  main, .site-footer {
     animation: fade-out 1s 1s ease both;
   }
 
   main article + article,
   main a + a,
-  main section + section {
+
+  main section:not(.bg-grey-dark) + section,
+  .site-footer__nav a + a {
     animation: fade-out 0.5s ease both;
-    @include nth-ani-delay(10, 0.1s);
+    @include nth-ani-delay(20, 0.1s);
   }
 }
 

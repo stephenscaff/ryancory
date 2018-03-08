@@ -246,7 +246,9 @@ $mobile:false){
   margin-right: -$pad;
   column-count: $sm;
   column-gap: $gap;
-  -webkit-perspective: 1;
+  backface-visibility: hidden; /* Prevents flicker in Chrome */
+   will-change: transform, opacity; /* Prevents flicker in Safari */
+
 
   @if $med {
     @media(min-width: $mq-med){
@@ -272,6 +274,8 @@ $mobile:false){
       break-inside: avoid-column;
       padding-left: $pad;
       padding-right: $pad;
+      backface-visibility: hidden; /* Prevents flicker in Chrome */
+   will-change: transform, opacity; /* Prevents flicker in Safari */
     }
   }
 }

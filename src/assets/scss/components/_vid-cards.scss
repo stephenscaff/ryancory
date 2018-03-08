@@ -14,7 +14,7 @@
   &__link {
     cursor: pointer;
   }
-  &__link, &__wrap {
+&__link, &__wrap {
     z-index: 9;
     position: relative;
     display: flex;
@@ -83,7 +83,7 @@
     }
 
     .vid-card__link:hover &, a:hover &{
-      transform: scale(1.2);
+      transform: scale(1.1);
       transition: transform .3s ease-in-out;
     }
   }

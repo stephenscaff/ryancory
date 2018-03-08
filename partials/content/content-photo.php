@@ -18,9 +18,11 @@ $tax = jumpoff_term_class('photo_cat');
 <article class="photo <?php echo $tax ?> ">
   <a class="photo__link js-inview" href="<?php echo $link; ?>">
       <figure class="photo__figure">
-        <span class="photo__scaler">
-          <img class="photo__img" src="<?php echo $img; ?>">
-        </span>
+        <div>
+          <span class="photo__scaler">
+            <img class="photo__img" src="<?php echo $img; ?>">
+          </span>
+      </div>
       </figure>
     <header class="photo__header">
       <h3 class="photo__title">

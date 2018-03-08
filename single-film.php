@@ -38,7 +38,7 @@ $ft_vid = get_field('featured_video');
       <?php //if ($mast_vid) : get_template_part( 'partials/partial', 'play-btn' ); endif; ?>
       <h1 class="mast__pretitle oh"><span><?php echo $title; ?></span></h1>
       <h2 class="mast__title oh">
-        <?php echo jumpoff_line_wrap ($film_title, span); ?>
+        <?php echo jumpoff_line_wrap ($film_title, 'span'); ?>
       </h2>
     </div>
   </div>

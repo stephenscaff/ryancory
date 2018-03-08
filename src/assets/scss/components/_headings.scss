@@ -10,7 +10,8 @@
     margin-bottom: 0;
   }
 
-  &__title + &__subtitle {
+  &__title + &__subtitle ,
+  &__title + &__text {
     margin-top: $pad-xs;
   }
 
@@ -25,7 +26,7 @@
     padding-top: $pad-sm;
 }
 
-.heading.-page {
+.heading.-page, article > .heading {
   padding-top: $pad;
   padding-bottom: $pad-sm;
 }

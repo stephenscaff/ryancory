@@ -18,19 +18,23 @@
 }
 
 .pad-b {
+  padding-top: 0;
   padding-bottom: $pad;
 }
 
 .pad-b-lg {
+  padding-top: 0;
   padding-bottom: $pad-lg;
 }
 
 .pad-t {
   padding-top: $pad;
+  padding-bottom: 0;
 }
 
 .pad-t-lg {
   padding-top: $pad-lg;
+  padding-bottom: 0;
 }
 
 .no-pad {

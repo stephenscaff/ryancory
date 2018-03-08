@@ -58,11 +58,14 @@
     margin-bottom: $pad-sm/2;
     transform: scale(1);
     transition: transform .3s ease-in-out;
-    overflow: hidden;
     border-radius: $base-border-radius;
 
     .photo__link:hover &, a:hover &{
       transform: scale(.97);
+    }
+
+    & > div {
+      overflow: hidden;
     }
   }
 
@@ -71,7 +74,7 @@
 
 
     .js-inview &{
-      transform: scale(1.5);
+      transform: scale(1.25);
       transition: transform 1s;
       pointer-events: none;
       visibility: hidden;
@@ -90,6 +93,7 @@
     border-radius: $base-border-radius;
     transform: scale(1);
     transition: transform .3s ease-in-out;
+    backface-visibility: hidden;
     //transition: transform 1s;
     //@include img-crisper;
 
